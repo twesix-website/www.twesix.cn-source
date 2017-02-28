@@ -1,0 +1,36 @@
+.step
+{
+    width:400px;
+    height:400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card
+{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #826;
+}
+.card a
+{
+    box-sizing: border-box;
+    font-size:2em;
+    margin-bottom:30px;
+    font-weight: lighter;
+    border-bottom:1px solid white;
+}
+.card a:hover
+{
+    border-bottom:1px solid #826;
+}
+a,
+a:active,
+a:visited
+{
+    color:#826;
+    text-decoration: none;
+}
