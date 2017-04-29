@@ -19,16 +19,10 @@ var cards=
             p2:'因为有音乐陪着哥'
         },
         {
-            header:'生活博客',
+            header:'个人博客',
             href:'//twesix.cn/blog',
             p1:'是否还能记起',
             p2:'曾经总是微笑着的你'
-        },
-        {
-            header:'技术博客',
-            href:'//yq.aliyun.com/u/twesix',
-            p1:'学如逆水行舟',
-            p2:'不进则退'
         },
         {
             header:'打开方式',
@@ -38,7 +32,7 @@ var cards=
         },
         {
             header:'那些年',
-            href:'//twesix.cn/resume',
+            href:'//twesix.cn/life',
             p1:'不论何时，不论何地',
             p2:'我依旧是是当初的那个我'
         },
