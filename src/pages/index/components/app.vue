@@ -6,7 +6,7 @@
         <div id="bottom">
             <_title></_title>
             <description></description>
-            <links></links>
+            <links id="links"></links>
         </div>
 
     </div>
@@ -53,6 +53,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        padding-bottom: 100px;
     }
 </style>
 

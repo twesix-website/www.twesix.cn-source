@@ -19,5 +19,6 @@
     .text-center
     {
         text-align: center;
+        font-family: Consolas,serif,arial,sans-serif;
     }
 </style>
