@@ -39,6 +39,12 @@
         </span>
         <span class="link-sep">/</span>
 
+        <!-- girls -->
+        <span class="link">
+            <a href="https://www.twesix.cn/girls">girls</a>
+        </span>
+        <span class="link-sep">/</span>
+
         <!-- cheatsheet -->
         <span class="link">
             <a href="https://www.twesix.cn/cheatsheet">cheatsheet</a>
@@ -57,7 +63,7 @@
 <style scoped>
     #links
     {
-        padding-top: 50px;
+        padding: 50px;
         font-size: 30px;
         font-family: Consolas,serif,arial,sans-serif;
     }
@@ -67,5 +73,22 @@
     .link-sep
     {
 
+    }
+
+    a:link
+    {
+        color:  black;
+    }
+    a:visited
+    {
+        color:  black;
+    }
+    a:hover
+    {
+        color:  blue;
+    }
+    a:active
+    {
+        color:  blue;
     }
 </style>

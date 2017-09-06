@@ -1,24 +1,58 @@
 <template>
-    <div>
-        <h2 class="text-center">by n !</h2>
+    <div id="sentiment">
+        <p class="segment" v-for=" segment in sentiment.content ">
+            {{ segment }}
+        </p>
+        <p class="meta">--- {{ sentiment.meta }}</p>
+        <p class="time">{{ sentiment.time }}</p>
     </div>
 </template>
 <script>
+
+    import sentiments from '../sentiments.js';
+    import { random } from '../util';
 
     export default
         {
             data: function()
             {
-                return {};
+                return {
+                    sentiment : {},
+                    index: null,
+                };
+            },
+            mounted: function()
+            {
+                this.index = random(0, sentiments.length - 1);
+                this.sentiment = sentiments[this.index];
             }
         }
 
 </script>
 
 <style scoped>
-    .text-center
+    #sentiment
+    {
+        font-family: valentine;
+        font-size: 20px;
+        min-width: 800px;
+    }
+    .segment
     {
         text-align: center;
-        font-family: Consolas,serif,arial,sans-serif;
+    }
+    .meta
+    {
+        text-align: right;
+    }
+    .time
+    {
+        text-align: right;
+    }
+
+    @font-face
+    {
+        font-family: valentine;
+        src: url('../resource/造字工房情书常规体.otf');
     }
 </style>

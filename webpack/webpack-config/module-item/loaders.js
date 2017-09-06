@@ -23,16 +23,16 @@ module.exports =
             loader: 'url-loader',
             options:
                 {
-                    limit: 8192,
+                    limit: 128,
                     name: 'vendor/img/[hash].[ext]',
                 }
         },
         {
-            test: /.(eot|svg|ttf|woff|woff2)$/,
+            test: /.(eot|svg|ttf|woff|woff2|otf)$/,
             loader: 'url-loader',
             options:
                 {
-                    limit: 8192,
+                    limit: 128,
                     name: 'vendor/font/[hash].[ext]',
                 }
         },
