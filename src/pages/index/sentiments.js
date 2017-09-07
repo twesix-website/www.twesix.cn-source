@@ -1,5 +1,15 @@
 const sentiments = [];
 
+// 40
+sentiments.push
+(
+    {
+        "content":"最怕碌碌无为//还叹平凡可贵",
+        "meta":"简书",
+        "time":"2017-9-7 17:53:58"
+    }
+);
+
 // 39
 sentiments.push
 (
