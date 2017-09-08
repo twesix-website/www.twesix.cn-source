@@ -24,7 +24,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"所谓喜欢一个人就是//记得她说的每一句话//想成为实现她愿望的那个人。",
+        "content":"所谓喜欢一个人就是//记得她说的每一句话//想成为实现她愿望的那个人",
         "meta":"柯达《在世界中心呼唤爱》",
         "time":"2017-2-20 20:04:53"
     }
@@ -34,7 +34,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"看那青山荡漾在水上//看那晚霞吻着夕阳。",
+        "content":"看那青山荡漾在水上//看那晚霞吻着夕阳",
         "meta":"江珊 《梦里水乡》",
         "time":"2017-1-13 12:20:29"
     }
@@ -44,7 +44,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"just one last dance//before we say goodbye//just one more chance//hold me tight and keep me warm.",
+        "content":"just one last dance//before we say goodbye//just one more chance//hold me tight and keep me warm",
         "meta":"Sarah Connor 《Just One Last dance》",
         "time":"2017-1-3 17:05:25"
     }
@@ -54,7 +54,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"拿的起，才能站得更高//放得下，才能走的更远。",
+        "content":"拿的起，才能站得更高//放得下，才能走的更远",
         "meta":"大三上期末考试",
         "time":"2017-1-3 16:02:35"
     }
@@ -94,7 +94,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"真理在被公认之前//一直都被认为是错误的。",
+        "content":"真理在被公认之前//一直都被认为是错误的",
         "meta":"无心",
         "time":"2016-12-29 21:22:25"
     }
@@ -104,7 +104,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"我们每个人都是梦想家//当梦走了//就剩想家了。",
+        "content":"我们每个人都是梦想家//当梦走了//就剩想家了",
         "meta":"江小白",
         "time":"2016-12-28 17:37:23"
     }
@@ -114,7 +114,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"当人被逼到绝境的时候//就是他能力提高的时候。",
+        "content":"当人被逼到绝境的时候//就是他能力提高的时候",
         "meta":"萧然 《北上广依然相信爱情》",
         "time":"2016-12-28 16:29:10"
     }
@@ -124,7 +124,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"如果这就是爱情//本来就不公平//你不需要讲理//我可以离去。",
+        "content":"如果这就是爱情//本来就不公平//你不需要讲理//我可以离去",
         "meta":"张靓颖 《如果这就是爱情》",
         "time":"2016-12-28 14:00:31"
     }
@@ -154,7 +154,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"若不平凡//注定孤独。",
+        "content":"若不平凡//注定孤独",
         "meta":"无心",
         "time":"2016-12-27 17:02:13"
     }
@@ -164,7 +164,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"早习惯了孤独相随。",
+        "content":"早习惯了孤独相随",
         "meta":"无心",
         "time":"2016-12-27 17:02:07"
     }
@@ -174,7 +174,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"做个不平凡的人并不容易//因为你身边的大部分人//都认为平凡的是最好的//并且劝你也走一条平凡的路。",
+        "content":"做个不平凡的人并不容易//因为你身边的大部分人//都认为平凡的是最好的//并且劝你也走一条平凡的路",
         "meta":"有感而发",
         "time":"2016-12-27 17:01:57"
     }
@@ -184,7 +184,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"真正的远见是//你身边的人都觉得是错的//你自己都不敢保证是对的//但仍然有勇气迈出那一步。",
+        "content":"真正的远见是//你身边的人都觉得是错的//你自己都不敢保证是对的//但仍然有勇气迈出那一步",
         "meta":"有感而发",
         "time":"2016-12-27 16:58:53"
     }
@@ -214,7 +214,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"不敢颠覆这世俗//又算什么人物//沉默会被错误解读//进攻是最好的防护。",
+        "content":"不敢颠覆这世俗//又算什么人物//沉默会被错误解读//进攻是最好的防护",
         "meta":"张杰 《逆态度》",
         "time":"2016-12-24 22:28:15"
     }
@@ -304,7 +304,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"永远是一个简单的词//却代表着最难实现的承诺//它只能代表在说出口的那一刻//彼此真诚过。",
+        "content":"永远是一个简单的词//却代表着最难实现的承诺//它只能代表在说出口的那一刻//彼此真诚过",
         "meta":"匆匆那年",
         "time":"2016-12-6 22:41:02"
     }
@@ -334,7 +334,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"女孩子二十岁左右，是她最美丽的年华//这时的她心地善良，有点成熟又有点孩子气//男孩子二十岁左右，是他最黯淡的日子//这时的他什么都没有，不能独立又不想依赖//挣扎着彷徨着，寻找着自己的位置//所以一个男孩子，在他二十岁左右时//遇见了一个年纪相当的女孩子，那一定要珍惜她//因为这个女孩，是用自己最美丽的年华，陪他走过了最黯淡的日子！",
+        "content":"女孩子二十岁左右，是她最美丽的年华//这时的她心地善良，有点成熟又有点孩子气//男孩子二十岁左右，是他最黯淡的日子//这时的他什么都没有，不能独立又不想依赖//挣扎着彷徨着，寻找着自己的位置//所以一个男孩子，在他二十岁左右时//遇见了一个年纪相当的女孩子，那一定要珍惜她//因为这个女孩，是用自己最美丽的年华，陪他走过了最黯淡的日子",
         "meta":"网络句子",
         "time":"2016-12-6 11:43:56"
     }
@@ -344,7 +344,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"If you can not explain it to a six-year old//you really do not understand it yourself. ",
+        "content":"If you can not explain it to a six-year old//you really do not understand it yourself.",
         "meta":"Albert Einstein",
         "time":"2016-12-5 18:50:24"
     }
@@ -374,7 +374,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"真正的气质//是你从不需要刻意去展示什么 ",
+        "content":"真正的气质//是你从不需要刻意去展示什么",
         "meta":"于吉林大学南苑二公寓473",
         "time":"2016-12-3 23:24:20"
     }
