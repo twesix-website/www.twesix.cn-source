@@ -15,12 +15,6 @@
         </span>
         <span class="link-sep">/</span>
 
-        <!-- me -->
-        <span class="link">
-            <a href="https://www.twesix.cn/me">me</a>
-        </span>
-        <span class="link-sep">/</span>
-
         <!-- music -->
         <span class="link">
             <a href="https://www.twesix.cn/music">music</a>
@@ -33,23 +27,6 @@
         </span>
         <span class="link-sep">/</span>
 
-        <!-- love -->
-        <span class="link">
-            <a href="https://www.twesix.cn/love">love</a>
-        </span>
-        <span class="link-sep">/</span>
-
-        <!-- girls -->
-        <span class="link">
-            <a href="https://www.twesix.cn/girls">girls</a>
-        </span>
-        <span class="link-sep">/</span>
-
-        <!-- cheatsheet -->
-        <span class="link">
-            <a href="https://www.twesix.cn/cheatsheet">cheatsheet</a>
-        </span>
-        <span class="link-sep">/</span>
     </div>
 </template>
 <script>
@@ -69,6 +46,11 @@
     }
     .link
     {
+    }
+    .link a
+    {
+        padding: 10px 20px;
+        text-decoration: none;
     }
     .link-sep
     {

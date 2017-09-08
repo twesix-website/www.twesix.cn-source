@@ -7,7 +7,7 @@
             m
         </span>
         <span id="name">
-            孟政元
+            <a href="https://www.twesix.cn/me">孟政元</a>
         </span>
     </div>
 </template>
@@ -46,5 +46,26 @@
     #name
     {
         font-size: 62px;
+    }
+
+    a:link
+    {
+        color:  black;
+    }
+    a:visited
+    {
+        color:  black;
+    }
+    a:hover
+    {
+        color:  black;
+    }
+    a:active
+    {
+        color:  black;
+    }
+    a
+    {
+        text-decoration: none;
     }
 </style>
