@@ -35,7 +35,7 @@
     {
         font-family: valentine;
         font-size: 20px;
-        min-width: 800px;
+        min-width: 500px;
     }
     .segment
     {
@@ -50,9 +50,12 @@
         text-align: right;
     }
 
-    @font-face
+    @media (max-width: 500px)
     {
-        font-family: valentine;
-        src: url('../resource/造字工房情书常规体.otf');
+        .meta,
+        .time
+        {
+            display:none;
+        }
     }
 </style>

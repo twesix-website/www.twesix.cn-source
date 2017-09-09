@@ -1,31 +1,25 @@
 <template>
     <div id="links">
 
-        <span class="link-sep">/</span>
-
         <!-- blog -->
         <span class="link">
             <a href="https://www.twesix.cn/blog">blog</a>
         </span>
-        <span class="link-sep">/</span>
 
         <!-- github -->
         <span class="link">
             <a href="https://github.com/twesix">github</a>
         </span>
-        <span class="link-sep">/</span>
 
         <!-- music -->
         <span class="link">
             <a href="https://www.twesix.cn/music">music</a>
         </span>
-        <span class="link-sep">/</span>
 
         <!-- resume -->
         <span class="link">
             <a href="https://www.twesix.cn/resume">resume</a>
         </span>
-        <span class="link-sep">/</span>
 
     </div>
 </template>
@@ -40,37 +34,35 @@
 <style scoped>
     #links
     {
-        padding: 50px;
-        font-size: 30px;
+        margin-top: 20px;
+        margin-bottom: 100px;
         font-family: Consolas,serif,arial,sans-serif;
     }
-    .link
-    {
-    }
-    .link a
-    {
-        padding: 10px 20px;
-        text-decoration: none;
-    }
-    .link-sep
-    {
 
+    /* large screen */
+    @media (min-width: 501px)
+    {
+        .link
+        {
+            margin: 10px;
+            font-size: 30px;
+        }
+    }
+    /* small screen */
+    @media (max-width: 500px)
+    {
+        .link
+        {
+            margin: 5px;
+            font-size: 20px;
+        }
     }
 
-    a:link
-    {
-        color:  black;
-    }
-    a:visited
-    {
-        color:  black;
-    }
-    a:hover
-    {
-        color:  blue;
-    }
+    a:link,
+    a:visited,
+    a:hover,
     a:active
     {
-        color:  blue;
+        color:  black;
     }
 </style>

@@ -67,4 +67,10 @@
         padding: 0;
         overflow-x: hidden;
     }
+
+    @font-face
+    {
+        font-family: valentine;
+        src: url('../resource/造字工房情书常规体.otf');
+    }
 </style>

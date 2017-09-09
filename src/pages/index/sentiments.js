@@ -41,14 +41,14 @@ sentiments.push
 );
 
 // 36
-sentiments.push
-(
-    {
-        "content":"just one last dance//before we say goodbye//just one more chance//hold me tight and keep me warm",
-        "meta":"Sarah Connor 《Just One Last dance》",
-        "time":"2017-1-3 17:05:25"
-    }
-);
+// sentiments.push
+// (
+//     {
+//         "content":"just one last dance//before we say goodbye//just one more chance//hold me tight and keep me warm",
+//         "meta":"Sarah Connor 《Just One Last dance》",
+//         "time":"2017-1-3 17:05:25"
+//     }
+// );
 
 // 35
 sentiments.push
@@ -64,7 +64,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"再见了心爱的梦中女孩，我将要去远方寻找未来//假如我有一天荣归故里，再到你窗外诉说情怀//再见了心爱的梦中女孩，对着你影子说声珍重//假如我永远不再回来，就让月亮守在你窗外",
+        "content":"再见了心爱的梦中女孩//我将要去远方寻找未来",
         "meta":"李琛 《窗外》",
         "time":"2017-1-2 19:13:17"
     }
@@ -191,14 +191,14 @@ sentiments.push
 );
 
 // 21
-sentiments.push
-(
-    {
-        "content":"doctor,actor,lawyer or a singer//why not a president,be a dreamer//you can be just the one you wanna be",
-        "meta":"Drain 《B What U Wanna B》",
-        "time":"2016-12-27 16:58:48"
-    }
-);
+// sentiments.push
+// (
+//     {
+//         "content":"doctor,actor,lawyer or a singer//why not a president,be a dreamer//you can be just the one you wanna be",
+//         "meta":"Drain 《B What U Wanna B》",
+//         "time":"2016-12-27 16:58:48"
+//     }
+// );
 
 // 20
 sentiments.push
@@ -214,7 +214,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"不敢颠覆这世俗//又算什么人物//沉默会被错误解读//进攻是最好的防护",
+        "content":"不敢颠覆这世俗//又算什么人物//",
         "meta":"张杰 《逆态度》",
         "time":"2016-12-24 22:28:15"
     }
@@ -304,7 +304,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"永远是一个简单的词//却代表着最难实现的承诺//它只能代表在说出口的那一刻//彼此真诚过",
+        "content":"永远是一个简单的词//却代表着最难实现的承诺",
         "meta":"匆匆那年",
         "time":"2016-12-6 22:41:02"
     }
@@ -334,7 +334,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"女孩子二十岁左右，是她最美丽的年华//这时的她心地善良，有点成熟又有点孩子气//男孩子二十岁左右，是他最黯淡的日子//这时的他什么都没有，不能独立又不想依赖//挣扎着彷徨着，寻找着自己的位置//所以一个男孩子，在他二十岁左右时//遇见了一个年纪相当的女孩子，那一定要珍惜她//因为这个女孩，是用自己最美丽的年华，陪他走过了最黯淡的日子",
+        "content":"她用自己最美丽的年华//陪他走过最黯淡的日子",
         "meta":"网络句子",
         "time":"2016-12-6 11:43:56"
     }
@@ -384,21 +384,21 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"慌慌张张，匆匆忙忙，为何生活总是这样//难道说，我的理想，就是这样度过一生的时光//不卑不亢，不慌不忙，也许生活应该这样//难道说，六十岁后，再去寻找我想要的自由",
+        "content":"慌慌张张，匆匆忙忙//为何生活总是这样",
         "meta":"郝云 《活着》",
         "time":"2016-12-3 23:21:34"
     }
 );
 
 // 1
-sentiments.push
-(
-    {
-        "content":"我或许永远也说不清爱情是什么//但这也是她最迷人的地方",
-        "meta":"于吉林大学南苑二公寓473",
-        "time":"2016-12-8 20:52:37"
-    }
-);
+// sentiments.push
+// (
+//     {
+//         "content":"我或许永远也说不清爱情是什么//但这也是她最迷人的地方",
+//         "meta":"于吉林大学南苑二公寓473",
+//         "time":"2016-12-8 20:52:37"
+//     }
+// );
 
 
 sentiments.forEach(function(e,i,arr)

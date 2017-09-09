@@ -1,13 +1,10 @@
 <template>
     <div id="description">
         <p>
-            吉大计院暖男一枚，平时喜欢写点小程序，搞点小设计，喜欢极简风格
+            生活得有代码和音乐
         </p>
         <p>
-            善感但不多愁，温和但不滥好，喜欢运动，听歌，睡觉，电影，以及一切美好的事物
-        </p>
-        <p>
-            当然了，最喜欢的还是 _________
+            还有远方的你
         </p>
     </div>
 </template>
@@ -27,6 +24,20 @@
     #description
     {
         text-align: center;
-        padding-top: 50px;
+        padding-top: 20px;
+    }
+    @media (min-width: 501px)
+    {
+        #description
+        {
+            font-size: 30px;
+        }
+    }
+    @media (max-width: 500px)
+    {
+        #description
+        {
+            font-size: 20px;
+        }
     }
 </style>
