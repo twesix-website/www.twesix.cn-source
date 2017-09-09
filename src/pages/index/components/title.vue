@@ -30,18 +30,21 @@
         justify-content: center;
         align-items: baseline;
     }
+    #i,
+    #m
+    {
+        font-family: Consolas, "Source Code Pro", monospace, Monospaced, serif, arial, sans-serif;
+    }
     #i
     {
         font-size: 60px;
         font-weight: lighter;
-        font-family: Consolas,serif,arial,sans-serif;
     }
     #m
     {
         font-size: 32px;
         margin-right: 30px;
         font-weight: bolder;
-        font-family: Consolas,serif,arial,sans-serif;
     }
     #name
     {

@@ -36,7 +36,7 @@
     {
         margin-top: 20px;
         margin-bottom: 100px;
-        font-family: Consolas,serif,arial,sans-serif;
+        font-family: Consolas, "Source Code Pro", monospace, Monospaced, serif, arial, sans-serif;
     }
 
     /* large screen */
