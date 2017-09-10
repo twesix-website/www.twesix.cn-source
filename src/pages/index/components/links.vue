@@ -1,5 +1,5 @@
 <template>
-    <div id="links">
+    <div id="links" class="animated fadeInUp">
 
         <!-- blog -->
         <span class="link">
@@ -37,6 +37,7 @@
         margin-top: 20px;
         margin-bottom: 100px;
         font-family: Consolas, "Source Code Pro", monospace, Monospaced, serif, arial, sans-serif;
+        animation-delay: 1s;
     }
 
     /* large screen */

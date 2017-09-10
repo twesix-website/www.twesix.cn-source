@@ -1,12 +1,12 @@
 <template>
-    <div id="title">
+    <div id="title" class="animated fadeInDown">
         <span id="i">
             I
         </span>
         <span id="m">
             m
         </span>
-        <span id="name" class="animated flipInX">
+        <span id="name">
             <a href="https://www.twesix.cn/me">孟政元</a>
         </span>
     </div>
@@ -43,7 +43,6 @@
     #m
     {
         font-size: 32px;
-        margin-right: 30px;
         font-weight: bolder;
     }
     #name
@@ -59,6 +58,7 @@
         #m
         {
             font-size: 62px;
+            margin-right: 50px;
         }
         #name
         {
@@ -74,6 +74,7 @@
         #m
         {
             font-size: 36px;
+            margin-right: 30px;
         }
         #name
         {

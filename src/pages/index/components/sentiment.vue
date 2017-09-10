@@ -1,5 +1,5 @@
 <template>
-    <div id="sentiment">
+    <div id="sentiment" class="animated fadeInDown">
         <p class="segment" v-for=" segment in sentiment.content ">
             {{ segment }}
         </p>
@@ -36,6 +36,7 @@
         font-family: valentine;
         font-size: 20px;
         min-width: 500px;
+        animation-delay: 2s;
     }
     .segment
     {

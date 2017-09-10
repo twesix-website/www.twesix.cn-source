@@ -1,11 +1,8 @@
 <template>
     <div id="description">
-        <p>
-            生活得有代码和音乐
-        </p>
-        <p>
-            还有远方的你
-        </p>
+        <div class="left animated fadeInLeft">代码</div>
+        <div class="middle animated fadeInUp">远方</div>
+        <div class="right animated fadeInRight">音乐</div>
     </div>
 </template>
 <script>
@@ -23,14 +20,19 @@
 <style scoped>
     #description
     {
-        text-align: center;
-        padding-top: 20px;
+        display: flex;
+    }
+    #description div
+    {
+        margin: 0 15px;
+        animation-delay: 1s;
     }
     @media (min-width: 501px)
     {
         #description
         {
             font-size: 30px;
+            padding: 60px 0;
         }
     }
     @media (max-width: 500px)
@@ -38,6 +40,7 @@
         #description
         {
             font-size: 20px;
+            padding: 40px 0;
         }
     }
 </style>
