@@ -37,18 +37,35 @@
     }
     #i
     {
-        font-size: 60px;
         font-weight: lighter;
     }
     #m
     {
-        font-size: 32px;
         font-weight: bolder;
     }
-    #name
-    {
-        font-size: 32px;
-    }
+    /*
+    ** TODO : fix the animation issue
+    */
+    /*#name*/
+    /*{*/
+        /*animation: .5s nameShake infinite;*/
+        /*animation-play-state: paused;*/
+    /*}*/
+    /*#name:hover*/
+    /*{*/
+        /*animation-play-state: running;*/
+    /*}*/
+    /*@keyframes nameShake*/
+    /*{*/
+        /*25%*/
+        /*{*/
+            /*padding-top: -10px;*/
+        /*}*/
+        /*75%*/
+        /*{*/
+            /*padding-top: 10px;*/
+        /*}*/
+    /*}*/
     @media (min-width: 501px)
     {
         #i
