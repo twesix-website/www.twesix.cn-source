@@ -391,14 +391,14 @@ sentiments.push
 );
 
 // 1
-// sentiments.push
-// (
-//     {
-//         "content":"我或许永远也说不清爱情是什么//但这也是她最迷人的地方",
-//         "meta":"于吉林大学南苑二公寓473",
-//         "time":"2016-12-8 20:52:37"
-//     }
-// );
+sentiments.push
+(
+    {
+        "content":"吃得苦中苦//方为人上人",
+        "meta":"考研倒计时102天",
+        "time":"2017-9-13 12:43:36"
+    }
+);
 
 
 sentiments.forEach(function(e,i,arr)
