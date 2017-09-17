@@ -190,15 +190,15 @@ sentiments.push
     }
 );
 
-// 21
-// sentiments.push
-// (
-//     {
-//         "content":"doctor,actor,lawyer or a singer//why not a president,be a dreamer//you can be just the one you wanna be",
-//         "meta":"Drain 《B What U Wanna B》",
-//         "time":"2016-12-27 16:58:48"
-//     }
-// );
+//21
+sentiments.push
+(
+    {
+        "content":"虽有万千语//不知怎么去表白",
+        "meta":"《雨花石》",
+        "time":"2017-9-17 12:42:06"
+    }
+);
 
 // 20
 sentiments.push
