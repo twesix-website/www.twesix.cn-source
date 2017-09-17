@@ -41,14 +41,14 @@ sentiments.push
 );
 
 // 36
-// sentiments.push
-// (
-//     {
-//         "content":"just one last dance//before we say goodbye//just one more chance//hold me tight and keep me warm",
-//         "meta":"Sarah Connor 《Just One Last dance》",
-//         "time":"2017-1-3 17:05:25"
-//     }
-// );
+sentiments.push
+(
+    {
+        "content":"再苦再难也要坚强//只为那些期待眼神",
+        "meta":"刘欢《从头再来》",
+        "time":"2017-9-17 13:12:54"
+    }
+);
 
 // 35
 sentiments.push
