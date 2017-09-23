@@ -36,7 +36,7 @@
     {
         margin-top: 20px;
         margin-bottom: 100px;
-        font-family: Consolas, "Source Code Pro", monospace, Monospaced, serif, arial, sans-serif;
+        /*font-family: Consolas, "Source Code Pro", monospace, Monospaced, serif, arial, sans-serif;*/
         animation-delay: 1s;
     }
 
@@ -65,5 +65,8 @@
     a:active
     {
         color:  black;
+        text-decoration: none;
+        padding-bottom: 2px;
+        border-bottom: 2px solid black;
     }
 </style>

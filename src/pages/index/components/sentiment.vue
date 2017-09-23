@@ -33,8 +33,7 @@
 <style scoped>
     #sentiment
     {
-        font-family: valentine;
-        font-size: 20px;
+        font-size: 14px;
         min-width: 500px;
         animation-delay: 2s;
     }

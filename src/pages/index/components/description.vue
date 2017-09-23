@@ -1,7 +1,7 @@
 <template>
     <div id="description">
-        <div class="left animated fadeInLeft">代码</div>
-        <div class="middle animated fadeInUp">音乐</div>
+        <div class="left animated fadeInLeft">音乐</div>
+        <div class="middle animated fadeInUp">代码</div>
         <div class="right animated fadeInRight">远方</div>
     </div>
 </template>

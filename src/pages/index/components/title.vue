@@ -33,7 +33,7 @@
     #i,
     #m
     {
-        font-family: Consolas, "Source Code Pro", monospace, Monospaced, serif, arial, sans-serif;
+        /*font-family: Consolas, "Source Code Pro", monospace, Monospaced, serif, arial, sans-serif;*/
     }
     #i
     {
@@ -41,7 +41,8 @@
     }
     #m
     {
-        font-weight: bolder;
+        /*font-weight: bolder;*/
+        /*font-weight: lighter;*/
     }
     /*
     ** TODO : fix the animation issue
