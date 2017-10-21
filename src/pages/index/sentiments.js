@@ -1,5 +1,35 @@
 const sentiments = [];
 
+// 43
+sentiments.push
+(
+    {
+        "content":"最浪漫不过与你并肩看夕阳//我心之所向",
+        "meta":"《一笑倾城》",
+        "time":"2017-10-21 19:41:21"
+    }
+);
+
+// 42
+sentiments.push
+(
+    {
+        "content":"你的一切我都好奇像秘密//安全带系好带你去旅行",
+        "meta":"《带你去旅行》",
+        "time":"2017-10-18 22:58:45"
+    }
+);
+
+// 41
+sentiments.push
+(
+    {
+        "content":"生命的广阔//不历经磨难怎能感到",
+        "meta":"《追梦赤子心》",
+        "time":"2017-10-18 22:55:25"
+    }
+);
+
 // 40
 sentiments.push
 (
@@ -94,9 +124,9 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"真理在被公认之前//一直都被认为是错误的",
-        "meta":"无心",
-        "time":"2016-12-29 21:22:25"
+        "content":"最美的风景是，你就在我身边",
+        "meta":"missing bynbyn",
+        "time":"2017-10-15 22:57:30"
     }
 );
 
@@ -104,7 +134,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"我们每个人都是梦想家//当梦走了//就剩想家了",
+        "content":"我们每个人都是梦想家//当梦走了 就剩想家了",
         "meta":"江小白",
         "time":"2016-12-28 17:37:23"
     }
@@ -124,9 +154,9 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"如果这就是爱情//本来就不公平//你不需要讲理//我可以离去",
-        "meta":"张靓颖 《如果这就是爱情》",
-        "time":"2016-12-28 14:00:31"
+        "content":"在一开始 当初我还是//一个天真而又爱哭的孩子",
+        "meta":"《骄傲的少年》",
+        "time":"2017-10-18 22:55:56"
     }
 );
 
@@ -154,9 +184,9 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"若不平凡//注定孤独",
-        "meta":"无心",
-        "time":"2016-12-27 17:02:13"
+        "content":"却误了浮世骄阳//也错过人间万象",
+        "meta":"《一笑倾城》",
+        "time":"2017-10-21 19:39:18"
     }
 );
 
@@ -174,9 +204,9 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"做个不平凡的人并不容易//因为你身边的大部分人//都认为平凡的是最好的//并且劝你也走一条平凡的路",
-        "meta":"有感而发",
-        "time":"2016-12-27 17:01:57"
+        "content":"我要的不仅仅是成功//而是其他人都必须失败",
+        "meta":"成吉思汗",
+        "time":"2017-10-18 22:36:44"
     }
 );
 
@@ -184,9 +214,9 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"真正的远见是//你身边的人都觉得是错的//你自己都不敢保证是对的//但仍然有勇气迈出那一步",
-        "meta":"有感而发",
-        "time":"2016-12-27 16:58:53"
+        "content":"曾经的我那么懦弱畏惧着一切//也曾向往外面如此美丽的世界",
+        "meta":"《飞-致我们的星辰大海》",
+        "time":"2017-10-18 22:56:06"
     }
 );
 
@@ -214,7 +244,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"不敢颠覆这世俗//又算什么人物//",
+        "content":"不敢颠覆这世俗//又算什么人物",
         "meta":"张杰 《逆态度》",
         "time":"2016-12-24 22:28:15"
     }
@@ -344,7 +374,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"If you can not explain it to a six-year old//you really do not understand it yourself.",
+        "content":"If you can't explain it to a six-year old//you really don't understand it yourself.",
         "meta":"Albert Einstein",
         "time":"2016-12-5 18:50:24"
     }
@@ -384,7 +414,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"慌慌张张，匆匆忙忙//为何生活总是这样",
+        "content":"慌慌张张 匆匆忙忙//为何生活总是这样",
         "meta":"郝云 《活着》",
         "time":"2016-12-3 23:21:34"
     }

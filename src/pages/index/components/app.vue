@@ -10,6 +10,9 @@
         </div>
 
     </div>
+
+    <!-- TODO : fix the font size problem of sentiments on mobile device -->
+    <!-- TODO : add rythm.js effect -->
 </template>
 <script>
 
@@ -32,6 +35,7 @@
 </script>
 
 <style scoped>
+
     #content
     {
         width: 100%;
