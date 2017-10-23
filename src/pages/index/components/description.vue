@@ -1,8 +1,14 @@
 <template>
-    <div id="description">
-        <div class="left animated fadeInLeft">音乐</div>
-        <div class="middle animated fadeInUp">代码</div>
-        <div class="right animated fadeInRight">远方</div>
+    <div id="description" class="animated fadeInUp">
+        <a href="https://www.twesix.cn/music">
+            <div class="item">音乐</div>
+        </a>
+        <a href="https://github.com/twesix">
+            <div class="item">代码</div>
+        </a>
+        <a href="https://www.twesix.cn/blog">
+            <div class="item">远方</div>
+        </a>
     </div>
 </template>
 <script>
@@ -21,26 +27,22 @@
     #description
     {
         display: flex;
+        justify-content: space-around;
     }
-    #description div
+    .animated
     {
-        margin: 0 15px;
         animation-delay: 1s;
     }
-    @media (min-width: 501px)
+    .item
     {
-        #description
-        {
-            font-size: 30px;
-            padding: 60px 0;
-        }
-    }
-    @media (max-width: 500px)
-    {
-        #description
-        {
-            font-size: 20px;
-            padding: 40px 0;
-        }
+
+        margin: 0 1rem;
+        padding: .5rem 1em;
+        font-size: 1rem;
+        border: 1px solid #34a853;
+        border-radius: 2rem;
+
+        background-color: #34a853;
+        color: white;
     }
 </style>

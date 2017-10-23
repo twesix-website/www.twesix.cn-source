@@ -1,17 +1,16 @@
 <template>
     <div id="content">
         <div id="top">
-            <sentiment></sentiment>
-        </div>
-        <div id="bottom">
             <_title></_title>
             <description></description>
-            <links id="links"></links>
+            <!--<links id="links"></links>-->
+        </div>
+        <div id="bottom">
+            <sentiment></sentiment>
         </div>
 
     </div>
 
-    <!-- TODO : fix the font size problem of sentiments on mobile device -->
     <!-- TODO : add rythm.js effect -->
 </template>
 <script>
@@ -45,18 +44,30 @@
     }
     #top
     {
+        height: 50%;
         display: flex;
-        flex-grow: 1;
-        justify-content: center;
-        align-items: center;
-    }
-    #bottom
-    {
-        display: flex;
-        flex-grow: 0;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+    #bottom
+    {
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (max-height: 500px)
+    {
+        #top
+        {
+            height: 100%;
+        }
+        #bottom
+        {
+            display: none;
+        }
     }
 </style>
 
@@ -70,5 +81,15 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
+        /*background-color: #f1f1f1;*/
+    }
+
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active
+    {
+        text-decoration: none;
     }
 </style>

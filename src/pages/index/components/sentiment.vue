@@ -33,9 +33,13 @@
 <style scoped>
     #sentiment
     {
-        font-size: 14px;
-        min-width: 500px;
+        font-size: 0.8rem;
+        min-width: 600px;
         animation-delay: 2s;
+        background-color: #2850a7;
+        padding: 30px;
+        color: #bdcae4;
+        border-radius: 3em;
     }
     .segment
     {
@@ -50,7 +54,12 @@
         text-align: right;
     }
 
-    @media (max-width: 500px)
+    @media (min-width: 601px)
+    {
+
+    }
+
+    @media (max-width: 600px)
     {
         .meta,
         .time
@@ -58,4 +67,5 @@
             display:none;
         }
     }
+
 </style>
