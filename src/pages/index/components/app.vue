@@ -5,12 +5,14 @@
 
         <div id="content">
             <div id="top">
-                <_title></_title>
-                <description></description>
+                <_title :display="title"></_title>
+                <description @musicOn="musicOn" @musicOff="musicOff"
+                             :display="description">
+                </description>
             </div>
             <div id="bottom">
                 <background_bottom></background_bottom>
-                <sentiment></sentiment>
+                <sentiment :display="sentiment"></sentiment>
             </div>
 
         </div>
@@ -35,7 +37,82 @@
                     description,
                     sentiment,
                     _title,
+                },
+            data: function()
+            {
+                return {
+                    title: false,
+                    description: false,
+                    sentiment: false,
                 }
+            },
+            methods:
+                {
+                    titleShow: function()
+                    {
+                        this.title = true
+                    },
+                    titleHide: function()
+                    {
+                        this.title = false
+                    },
+                    descriptionShow: function()
+                    {
+                        this.description = true
+                    },
+                    descriptionHide: function()
+                    {
+                        this.description = false
+                    },
+                    sentimentShow: function()
+                    {
+                        this.sentiment = true
+                    },
+                    sentimentHide: function()
+                    {
+                        this.sentiment = false
+                    },
+                    musicOn: function()
+                    {
+                        this.sentimentHide()
+                    },
+                    musicOff: function()
+                    {
+                        this.sentimentShow()
+                    },
+                    showAll: function()
+                    {
+                        const self = this;
+
+                        self.titleShow()
+                        setTimeout(function()
+                        {
+                            self.descriptionShow()
+                        }, 20)
+                        setTimeout(function()
+                        {
+                            self.sentimentShow()
+                        }, 600)
+                    },
+                    hideAll: function()
+                    {
+                        const self = this;
+
+                        self.sentimentHide()
+                        setTimeout(function()
+                        {
+                            self.descriptionHide()
+                        }, 580)
+                        setTimeout(function()
+                        {
+                            self.titleHide()
+                        }, 600)
+                    }
+                },
+            mounted: function()
+            {
+                this.showAll()
+            }
         }
 
 </script>
@@ -106,5 +183,46 @@
     a:active
     {
         text-decoration: none;
+    }
+
+    .blue
+    {
+        color: #4285f4;
+    }
+    .blue-bg
+    {
+        background-color: #4285f4;
+    }
+    .red
+    {
+        color: #ea4335;
+    }
+    .red-bg
+    {
+        background-color: #ea4335;
+    }
+    .orange
+    {
+        color: #fbbc05;
+    }
+    .orange-bg
+    {
+        background-color: #fbbc05;
+    }
+    .green
+    {
+        color: #34a853;
+    }
+    .green-bg
+    {
+        background-color: #34a853;
+    }
+    .white
+    {
+        color: white;
+    }
+    .white-bg
+    {
+        background-color: white;
     }
 </style>

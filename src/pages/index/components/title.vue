@@ -1,19 +1,27 @@
 <template>
-    <div id="title" class="animated fadeInUpBig">
-        <a href="https://www.twesix.cn/me">
-            <h1 id="name">
+    <transition
+            @before-enter="beforeEnter"
+            @after-leave="afterLeave"
+            appear
+            appearToClass="animated fadeInUpBig"
+            enterToClass="animated fadeInUpBig"
+            leaveToClass="animated fadeOutDownBig">
+        <div v-if="display" id="title" class="hidden" :class="{ visible: visible }">
+            <a href="https://www.twesix.cn/me">
+                <h1 id="name" class="blue">
                 <span id="meng">
                     孟
                 </span>
-                <span id="zheng">
+                    <span id="zheng">
                     政
                 </span>
-                <span id="yuan">
+                    <span id="yuan">
                     元
                 </span>
-            </h1>
-        </a>
-    </div>
+                </h1>
+            </a>
+        </div>
+    </transition>
 </template>
 <script>
 
@@ -21,40 +29,64 @@
         {
             data: function()
             {
-                return {};
-            }
+                return {
+                    visible: false
+                }
+            },
+            props: ['display'],
+            methods:
+                {
+                    beforeEnter: function()
+                    {
+                        const self = this
+                        setTimeout(function()
+                        {
+                            self.visible = true
+                        }, 30)
+                    },
+                    afterLeave: function()
+                    {
+                        this.visible = false
+                    }
+                }
         }
 
 </script>
 
 <style scoped>
+
+    .visible
+    {
+        visibility: visible !important;
+    }
+
+    .hidden
+    {
+        visibility: hidden;
+    }
+
     #title
     {
+        /*animation-duration: .5s;*/
+
         display: flex;
         justify-content: center;
     }
-    span
+
+
+    #name
     {
         transition: .5s;
     }
+    #name:hover
+    {
+        opacity: .8
+    }
+
     h1
     {
         font-size: 3rem;
         margin-top: 0;
-    }
-    #title:hover #yuan,
-    #meng
-    {
-        color: #4285f4;
-    }
-    #zheng
-    {
-        color: #ea4335;
-    }
-    #title:hover #meng,
-    #yuan
-    {
-        color: #fbbc05;
     }
 
     @media (min-width: 800px)
