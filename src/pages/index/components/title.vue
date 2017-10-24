@@ -57,4 +57,20 @@
         color: #fbbc05;
     }
 
+    @media (min-width: 800px)
+    {
+        h1
+        {
+            font-size: 5rem;
+        }
+    }
+
+    @media (min-width: 1200px)
+    {
+        h1
+        {
+            font-size: 7rem;
+        }
+    }
+
 </style>

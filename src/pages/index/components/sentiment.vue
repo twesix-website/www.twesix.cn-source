@@ -24,6 +24,7 @@
             mounted: function()
             {
                 this.index = random(0, sentiments.length - 1);
+//                this.index = 19;
                 this.sentiment = sentiments[this.index];
             }
         }

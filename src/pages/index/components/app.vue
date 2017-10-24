@@ -12,6 +12,7 @@
     </div>
 
     <!-- TODO : add rythm.js effect -->
+    <!-- TODO : optimize for very large screens -->
 </template>
 <script>
 

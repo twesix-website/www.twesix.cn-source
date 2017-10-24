@@ -37,12 +37,31 @@
     {
 
         margin: 0 1rem;
-        padding: .5rem 1em;
+        padding: .5rem 1rem;
         font-size: 1rem;
-        border: 1px solid #34a853;
         border-radius: 2rem;
 
+        transition: .5s;
         background-color: #34a853;
         color: white;
+    }
+
+    @media (max-width: 320px)
+    {
+        .item
+        {
+            margin: 0 .5rem;
+        }
+    }
+
+    @media (min-width: 800px)
+    {
+        .item
+        {
+            margin: 0 2rem;
+            padding: 1rem 2rem;
+            font-size: 2rem;
+            border-radius: 4rem;
+        }
     }
 </style>
