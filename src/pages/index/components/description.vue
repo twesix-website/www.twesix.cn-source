@@ -1,5 +1,5 @@
 <template>
-    <div id="description" class="animated fadeInUp">
+    <div id="description" class="animated fadeInUpBig">
         <a href="https://www.twesix.cn/music">
             <div class="item">音乐</div>
         </a>
@@ -31,7 +31,7 @@
     }
     .animated
     {
-        animation-delay: 1s;
+        animation-delay: .3s;
     }
     .item
     {

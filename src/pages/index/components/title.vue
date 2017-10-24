@@ -1,5 +1,5 @@
 <template>
-    <div id="title" class="animated fadeInDown">
+    <div id="title" class="animated fadeInUpBig">
         <a href="https://www.twesix.cn/me">
             <h1 id="name">
                 <span id="meng">

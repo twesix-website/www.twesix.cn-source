@@ -1,34 +1,40 @@
 <template>
-    <div id="content">
-        <div id="top">
-            <_title></_title>
-            <description></description>
-            <!--<links id="links"></links>-->
-        </div>
-        <div id="bottom">
-            <sentiment></sentiment>
-        </div>
+    <div id="app">
 
+        <background></background>
+
+        <div id="content">
+            <div id="top">
+                <_title></_title>
+                <description></description>
+            </div>
+            <div id="bottom">
+                <background_bottom></background_bottom>
+                <sentiment></sentiment>
+            </div>
+
+        </div>
     </div>
 
     <!-- TODO : add rythm.js effect -->
-    <!-- TODO : optimize for very large screens -->
 </template>
 <script>
 
-    import _title from './title.vue';
-    import sentiment from './sentiment.vue';
+    import background from './background.vue';
+    import background_bottom from './background_bottom.vue';
     import description from './description.vue';
-    import links from './links.vue';
+    import sentiment from './sentiment.vue';
+    import _title from './title.vue';
 
     export default
         {
             components:
                 {
-                    _title,
+                    background,
+                    background_bottom,
                     description,
                     sentiment,
-                    links,
+                    _title,
                 }
         }
 
@@ -36,8 +42,15 @@
 
 <style scoped>
 
+    #app
+    {
+        width: 100%;
+        height: 100%;
+    }
+
     #content
     {
+        position: relative;
         width: 100%;
         height: 100%;
         display: flex;
@@ -53,6 +66,7 @@
     }
     #bottom
     {
+        position: relative;
         height: 50%;
         display: flex;
         justify-content: center;

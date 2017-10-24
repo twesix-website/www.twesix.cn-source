@@ -1,5 +1,5 @@
 <template>
-    <div id="sentiment" class="animated fadeInDown">
+    <div id="sentiment" class="animated fadeInUpBig">
         <p class="segment" v-for=" segment in sentiment.content ">
             {{ segment }}
         </p>
@@ -36,7 +36,7 @@
     {
         font-size: 0.8rem;
         min-width: 600px;
-        animation-delay: 2s;
+        animation-delay: .6s;
         background-color: #2850a7;
         padding: 30px;
         color: #bdcae4;
