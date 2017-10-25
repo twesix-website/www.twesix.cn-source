@@ -3,7 +3,15 @@ const random = function(min,max)
     return Math.round(Math.random()*(max-min+1)+min-0.5);
 };
 
-export { random };
+function randomize(arr = [])
+{
+    arr.sort(function()
+    {
+        return Math.random() - 0.5
+    })
+}
+
+export { random, randomize };
 
 // random_test();
 

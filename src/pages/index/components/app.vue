@@ -2,6 +2,7 @@
     <div id="app">
 
         <background></background>
+        <music v-if="music" @musicOff="musicOff"></music>
 
         <div id="content">
             <div id="top">
@@ -11,7 +12,6 @@
                 </description>
             </div>
             <div id="bottom">
-                <music v-if="music"></music>
                 <sentiment :display="sentiment"></sentiment>
             </div>
 
@@ -75,12 +75,16 @@
                     },
                     musicOn: function()
                     {
-                        this.sentimentHide()
-                        this.music = true
+                        const self = this
+                        this.hideAll()
+                        setTimeout(function()
+                        {
+                            self.music = true
+                        }, 1000)
                     },
                     musicOff: function()
                     {
-                        this.sentimentShow()
+                        this.showAll()
                         this.music = false
                     },
                     showAll: function()
@@ -179,6 +183,11 @@
         /*background-color: #f1f1f1;*/
     }
 
+    *
+    {
+        box-sizing: border-box;
+    }
+
     a,
     a:link,
     a:visited,
@@ -227,5 +236,50 @@
     .white-bg
     {
         background-color: white;
+    }
+
+    .button
+    {
+        margin: 0 1rem;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border-radius: 2rem;
+
+        transition: .5s;
+    }
+    .button-mini
+    {
+        margin: 0 1rem;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border-radius: 2rem;
+
+        transition: .5s;
+    }
+    .button:hover,
+    .button-mini:hover
+    {
+        cursor: pointer;
+        opacity: .8
+    }
+
+    @media (max-width: 320px)
+    {
+        .button,
+        .button-mini
+        {
+            margin: 0 .5rem;
+        }
+    }
+
+    @media (min-width: 800px)
+    {
+        .button
+        {
+            margin: 0 2rem;
+            padding: 1rem 2rem;
+            font-size: 2rem;
+            border-radius: 4rem;
+        }
     }
 </style>

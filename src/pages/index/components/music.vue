@@ -1,40 +1,74 @@
 <template>
-    <div @click="toggle" id="music">
-        <div id="music_info">
-            <p v-if="loading">{{ loadingMessage }}</p>
-            <p v-else
-               v-for="message in audioName.split('-').slice(0, 2).reverse()">
-                {{ message.trim() }}
-            </p>
+    <div id="music">
+        <div id="panel">
+            <div id="music_info">
+                <h3 class="blue">{{ message }}</h3>
+                <h3 class="blue">
+                    {{ name }}
+                </h3>
+            </div>
+            <div id="music_controls">
+                <span  class="button-mini white green-bg" @click="toggle">&nbsp;&nbsp;<i class="fa" :class="{'fa-play': ! playing, 'fa-pause': playing}"></i>&nbsp;&nbsp;</span>
+                <span class="button-mini white orange-bg" @click="switchMusic">&nbsp;&nbsp;<i class="fa fa-fast-forward"></i>&nbsp;&nbsp;</span>
+                <span class="button-mini white red-bg" @click="close">&nbsp;&nbsp;<i class="fa fa-times"></i>&nbsp;&nbsp;</span>
+            </div>
         </div>
 
         <audio id="player"
                @canplay="canplay"
+               @ended="ended"
                :src=" baseUrl + audioName + '.mp3' "
                crossOrigin="anonymous"></audio>
 
         <canvas id="music_canvas"></canvas>
     </div>
 </template>
+
 <script>
 
     const baseUrl = 'https://cn-twesix-static.oss-cn-beijing.aliyuncs.com/homepage/audio/'
-    import musicList from '../audio-visulization/list'
-    import {random} from '../util'
+    import musicList from '../list'
+    import { randomize } from '../util'
+    import Visualizer from '../audio-visualization/'
+
+    let playList
+
+    function initPlayList()
+    {
+        playList = JSON.parse(JSON.stringify(musicList))
+        randomize(playList)
+        console.log(playList)
+    }
+    initPlayList()
 
     export default
         {
             data: function()
             {
                 return {
+                    playing: false,
                     baseUrl: baseUrl,
                     loading: true,
                     loadingMessage: '正在加载，请稍候...',
-                    audioName: null,
+                    loadedMessage: '正在播放',
+                    audioName: ' - ',
                     player: null,
                     visualizer: null
                 };
             },
+            computed:
+                {
+                    name: function()
+                    {
+                        const parts = this.audioName.split('-')
+                        parts.shift()
+                        return parts.join('-')
+                    },
+                    message: function()
+                    {
+                        return this.loading ? this.loadingMessage : this.loadedMessage
+                    }
+                },
             mounted: function()
             {
                 const self = this
@@ -47,34 +81,43 @@
                 canvas.width=canvas.parentElement.clientWidth
                 canvas.height=canvas.parentElement.clientHeight
 
-                const ctx = canvas.getContext('2d')
-                this.visualizer=new Visualizer(this.player, ctx);
-
-                const meterWidth = 20
-                const gapWidth = 2
-                const meterNum = parseInt(canvas.width)/(meterWidth + gapWidth)
-
-                const capHeight=2
-                const capFallSpeed=3
-                const capPositions=[]
-
-                const capStyle='#ff2f3f'
-                const gradient=ctx.createLinearGradient(0,0,0,1600)
-                gradient.addColorStop(1,'#22ff7d')
-                gradient.addColorStop(0.5,'#55caff')
-                gradient.addColorStop(0,'#a84cff')
-
+                this.visualizer=new Visualizer.Spectrum(this.player, canvas);
+                this.visualizer.start()
             },
             methods:
                 {
                     switchMusic: function()
                     {
+                        if(this.playing)
+                        {
+                            this.pause()
+                        }
                         this.loading = true
-                        this.audioName = musicList[random(0, musicList.length - 1)]
+                        this.audioName = playList.pop()
+                        if(playList.length === 0)
+                        {
+                            initPlayList()
+                        }
                     },
                     canplay: function()
                     {
                         this.loading = false
+                        this.play()
+                    },
+                    ended: function()
+                    {
+                        this.playing = false
+                        this.switchMusic()
+                    },
+                    play: function()
+                    {
+                        this.player.play()
+                        this.playing = true
+                    },
+                    pause: function()
+                    {
+                        this.player.pause();
+                        this.playing = false
                     },
                     toggle: function(e)
                     {
@@ -88,13 +131,18 @@
                         }
                         if(this.player.paused)
                         {
-                            this.player.play()
+                            this.play()
                         }
                         else
                         {
-                            this.player.pause();
+                            this.pause()
                         }
                     },
+                    close: function()
+                    {
+                        this.$emit('musicOff')
+                        this.visualizer.stop()
+                    }
                 }
         }
 
@@ -112,11 +160,30 @@
         position: absolute;
         left: 0;
         top: 0;
+        z-index: 2
+    }
+    #panel
+    {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding: 1rem;
     }
     #music_info
     {
-        width: 100%;
+        /*width: 100%;*/
         text-align: center;
+    }
+    #music_controls
+    {
+        margin-top: 1rem;
+        /*width: 100%;*/
+        /*text-align: center;*/
     }
     #music_canvas
     {
