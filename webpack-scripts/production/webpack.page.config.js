@@ -11,7 +11,7 @@ module.exports=
         [
             plugins.CommonsChunk,
             plugins.Define.production,
-            plugins.UglifyJs
+            plugins.UglifyJs,
         ]
             .concat(plugins.HtmlWebpack)
     };

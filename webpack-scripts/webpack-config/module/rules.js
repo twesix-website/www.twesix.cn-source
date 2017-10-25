@@ -1,17 +1,9 @@
 module.exports =
     [
         {
-            test: /\.vue$/,
-            loader: 'vue-loader'
-        },
-        {
             test:/\.js$/,
             loader:'babel-loader',
             exclude:'/node_modules/',
-            query:
-                {
-                    presets: ['latest', 'stage-0']
-                }
         },
         {
             test: /\.css$/,
@@ -19,20 +11,24 @@ module.exports =
             exclude: '/node_modules/'
         },
         {
-            test: /.(png|jpg|jpeg|gif)$/,
+            test: /\.vue$/,
+            loader: 'vue-loader'
+        },
+        {
+            test: /.(png|jpg|jpeg|gif|bmp)$/,
             loader: 'url-loader',
             options:
                 {
-                    limit: 128,
+                    limit: 8192,
                     name: 'vendor/img/[hash].[ext]',
                 }
         },
         {
-            test: /.(eot|svg|ttf|woff|woff2|otf)$/,
+            test: /.(eot|svg|ttf|woff|woff2)$/,
             loader: 'url-loader',
             options:
                 {
-                    limit: 128,
+                    limit: 8192,
                     name: 'vendor/font/[hash].[ext]',
                 }
         },
