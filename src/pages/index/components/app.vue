@@ -88,7 +88,7 @@
                         setTimeout(function()
                         {
                             self.descriptionShow()
-                        }, 20)
+                        }, 300)
                         setTimeout(function()
                         {
                             self.sentimentShow()
@@ -102,11 +102,11 @@
                         setTimeout(function()
                         {
                             self.descriptionHide()
-                        }, 580)
+                        }, 200)
                         setTimeout(function()
                         {
                             self.titleHide()
-                        }, 600)
+                        }, 400)
                     }
                 },
             mounted: function()

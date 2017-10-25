@@ -1,7 +1,9 @@
 <template>
     <transition
             @before-enter="beforeEnter"
+            @enter-cancelled="enterCancelled"
             @after-leave="afterLeave"
+            @leave-cancelled="leaveCancelled"
             appear
             appearToClass="animated fadeInUpBig"
             enterToClass="animated fadeInUpBig"
@@ -43,14 +45,24 @@
                         this.randomSentiment()
 
                         const self = this
+
+                        self.visible = false
                         setTimeout(function()
                         {
                             self.visible = true
                         }, 30)
                     },
+                    enterCancelled: function()
+                    {
+
+                    },
                     afterLeave: function()
                     {
                         this.visible = false
+                    },
+                    leaveCancelled: function()
+                    {
+
                     }
                 }
         }

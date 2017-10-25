@@ -12,3 +12,5 @@ const app = new Vue
             }
     }
 );
+
+import musicList  from './audio-visulization/list'

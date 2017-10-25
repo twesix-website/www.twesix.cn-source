@@ -36,6 +36,8 @@
                     beforeEnter: function()
                     {
                         const self = this
+
+                        self.visible = false
                         setTimeout(function()
                         {
                             self.visible = true
