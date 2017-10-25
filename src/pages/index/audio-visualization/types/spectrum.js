@@ -4,16 +4,15 @@ const defaultOptions =
     {
         meterWidth: 20,
         gapWidth: 2,
-        capHeight: 2,
+        capHeight: 5,
         capFallSpeed: 3,
         capColor: '#ff2f3f',
         gradientLength: 1080,
-        gradientStartColor: '#22ff7d',
-        gradientMiddleColor: '#55caff',
-        gradientEndColor: '#a84cff',
+        gradientStartColor: '#34a853',
+        gradientMiddleColor: '#4285f4',
+        gradientEndColor: '#fbbc05',
     }
-
-
+    // TODO: design beautiful gradients
 
 const Spectrum=function(audioSource, canvas, options = {})
 {
@@ -75,7 +74,7 @@ Spectrum.prototype=
             const self = this
             const options = this.options
             const capPositions=[]
-            const capInitialPosition = options.capHeight
+            const capInitialPosition = 0
             const canvas = this.canvas
             const ctx=this.ctx;
             const ratio = 3; // 柱体的高度/音频数据
@@ -85,14 +84,13 @@ Spectrum.prototype=
             }
             const draw_meter=function()
             {
-                console.log('drawing')
                 const array=new Uint8Array(self.__analyser.frequencyBinCount);
                 self.__analyser.getByteFrequencyData(array);
 
                 const step=Math.round(array.length/options.meterNum);
                 ctx.clearRect(0,0,self.canvas.width,self.canvas.height);
 
-                for(let i = 0 ; i < self.meterNum ; i ++ )
+                for(let i = 0 ; i < options.meterNum ; i ++ )
                 {
                     const value=array[i*step]*3;
 
@@ -102,7 +100,7 @@ Spectrum.prototype=
                         ctx.fillRect
                         (
                             i * (options.meterWidth+options.gapWidth),
-                            canvas.height - capPositions[i] + options.capHeight,
+                            canvas.height - capPositions[i] - options.capHeight,
                             options.meterWidth,
                             options.capHeight
                         )
@@ -118,7 +116,7 @@ Spectrum.prototype=
                         ctx.fillRect
                         (
                             i * (options.meterWidth+options.gapWidth),
-                            canvas.height - value + options.capHeight,
+                            canvas.height - value - options.capHeight,
                             options.meterWidth,
                             options.capHeight
                         )
@@ -132,6 +130,7 @@ Spectrum.prototype=
                         options.meterWidth,
                         value
                     )
+                    // TODO: draw more small rectangles rather than one big
                 }
             }
             self.__interval = setInterval(function()
