@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="css/normal.css">
+    <link rel="stylesheet" href="css/canvas.css">
+    <link rel="stylesheet" href="css/music_selector.css">
+    <link rel="stylesheet" href="css/control_panel.css">
+
+    <title>爱听歌，爱美女 | twesix.cn</title>
+</head>
+<body>
+<div id="music_selector">
+    <ul id="ul"></ul>
+</div>
+<div id="control_panel">
+    <h2 id="info"></h2>
+    <h4>点击空白处暂停播放或继续播放</h4>
+    <!-- 这个 crossOrigin="anonymous" 必须设置，要不然会告诉你 MediaElementAudioSource outputs zeroes due to CORS access restrictions -->
+    <audio id="audio" src="" crossOrigin="anonymous"></audio>
+</div>
+<canvas id="canvas"></canvas>
+
+<script src="list.js"></script>
+<script src="js/visualizer.js"></script>
+<script src="js/play_control.js"></script>
+</body>
+</html>

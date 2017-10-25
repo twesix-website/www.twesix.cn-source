@@ -11,7 +11,7 @@
                 </description>
             </div>
             <div id="bottom">
-                <background_bottom></background_bottom>
+                <music v-if="music"></music>
                 <sentiment :display="sentiment"></sentiment>
             </div>
 
@@ -23,7 +23,7 @@
 <script>
 
     import background from './background.vue';
-    import background_bottom from './background_bottom.vue';
+    import music from './music.vue';
     import description from './description.vue';
     import sentiment from './sentiment.vue';
     import _title from './title.vue';
@@ -33,7 +33,7 @@
             components:
                 {
                     background,
-                    background_bottom,
+                    music,
                     description,
                     sentiment,
                     _title,
@@ -44,6 +44,7 @@
                     title: false,
                     description: false,
                     sentiment: false,
+                    music: false
                 }
             },
             methods:
@@ -75,10 +76,12 @@
                     musicOn: function()
                     {
                         this.sentimentHide()
+                        this.music = true
                     },
                     musicOff: function()
                     {
                         this.sentimentShow()
+                        this.music = false
                     },
                     showAll: function()
                     {
