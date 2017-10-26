@@ -49,8 +49,9 @@
                     playing: false,
                     baseUrl: baseUrl,
                     loading: true,
-                    loadingMessage: '正在加载，请稍候...',
-                    loadedMessage: '正在播放',
+                    messageLoading: '正在加载，请稍候...',
+                    messagePlaying: '正在播放',
+                    messagePaused: '已暂停',
                     audioName: ' - ',
                     player: null,
                     visualizer: null
@@ -66,7 +67,21 @@
                     },
                     message: function()
                     {
-                        return this.loading ? this.loadingMessage : this.loadedMessage
+                        if(this.loading)
+                        {
+                            return this.messageLoading
+                        }
+                        else
+                        {
+                            if(this.playing)
+                            {
+                                return this.messagePlaying
+                            }
+                            else
+                            {
+                                return this.messagePaused
+                            }
+                        }
                     }
                 },
             mounted: function()
@@ -78,11 +93,21 @@
                 this.switchMusic()
 
                 const canvas = document.getElementById('music_canvas')
-                canvas.width=canvas.parentElement.clientWidth
-                canvas.height=canvas.parentElement.clientHeight
+                function resize()
+                {
+                    canvas.width=canvas.parentElement.clientWidth
+                    canvas.height=canvas.parentElement.clientHeight
+                }
+                resize()
 
                 this.visualizer=new Visualizer.Spectrum(this.player, canvas);
                 this.visualizer.start()
+
+                window.addEventListener('resize', function()
+                {
+                    resize()
+                    self.visualizer.resize()
+                })
             },
             methods:
                 {

@@ -16,50 +16,33 @@ const defaultOptions =
 
 const Spectrum=function(audioSource, canvas, options = {})
 {
-    if( ! this.__prepareAPI())
-    {
-        return
-    }
+    const __options = Object.assign(defaultOptions, options)
+    if( ! this.__init(this, audioSource, canvas, __options)) return
 
-    this.audioSource=audioSource;
-    this.canvas = canvas
-    options = Object.assign(defaultOptions, options)
-    this.options = options
+    this.__calculateSize()
 
-    this.ctx = canvas.getContext('2d')
+    const gradient=this.__ctx.createLinearGradient(0,0,0,this.__options.gradientLength)
+    gradient.addColorStop(1,this.__options.gradientStartColor)
+    gradient.addColorStop(0.5,this.__options.gradientMiddleColor)
+    gradient.addColorStop(0,this.__options.gradientEndColor)
+    this.__options.gradient = gradient
 
-    const gradient=this.ctx.createLinearGradient(0,0,0,options.gradientLength)
-    gradient.addColorStop(1,options.gradientStartColor)
-    gradient.addColorStop(0.5,options.gradientMiddleColor)
-    gradient.addColorStop(0,options.gradientEndColor)
-    options.gradient = gradient
-
-    options.meterNum = parseInt(canvas.width)/(options.meterWidth + options.gapWidth)
-    this.audioContext= new window.AudioContext()
-    this.dataSource=this.audioContext.createMediaElementSource(this.audioSource);
-
-    this.__analyser=this.audioContext.createAnalyser()
-    this.dataSource.connect(this.__analyser)
-    this.__analyser.connect(this.audioContext.destination);
-
-    this.__interval = null
 };
 
 Spectrum.prototype=
     {
         __prepareAPI: prototype.prepareAPI,
-
-        __addEventListeners:function()
+        __init: prototype.init,
+        __clearCanvas: prototype.clearCanvas,
+        __getByteFrequencyData: prototype.getByteFrequencyData,
+        __calculateSize: function()
         {
-            const that=this;
-            this.audioSource.addEventListener('play',function()
-            {
-
-            });
-            this.audioSource.addEventListener('pause',function()
-            {
-                that.dataSource.disconnect();
-            });
+            this.__options.meterNum = parseInt(this.__canvas.width/(this.__options.meterWidth + this.__options.gapWidth))
+        },
+        resize: function()
+        {
+            const self = this
+            self.__calculateSize()
         },
         start: function()
         {
@@ -72,27 +55,30 @@ Spectrum.prototype=
         __draw:function()
         {
             const self = this
-            const options = this.options
+            const options = this.__options
             const capPositions=[]
             const capInitialPosition = 0
-            const canvas = this.canvas
-            const ctx=this.ctx;
+            const canvas = this.__canvas
+            const ctx=this.__ctx;
             const ratio = 3; // 柱体的高度/音频数据
-            while(capPositions.length<options.meterNum)
+            const clearCanvas = this.__clearCanvas.bind(this)
+            const getByteFrequencyData = this.__getByteFrequencyData.bind(this)
+            while(capPositions.length < options.meterNum)
             {
                 capPositions.push(capInitialPosition);
             }
+
+
             const draw_meter=function()
             {
-                const array=new Uint8Array(self.__analyser.frequencyBinCount);
-                self.__analyser.getByteFrequencyData(array);
+                const array = getByteFrequencyData();
 
                 const step=Math.round(array.length/options.meterNum);
-                ctx.clearRect(0,0,self.canvas.width,self.canvas.height);
+                clearCanvas();
 
-                for(let i = 0 ; i < options.meterNum ; i ++ )
+                for(let i = 0; i < options.meterNum; i ++)
                 {
-                    const value=array[i*step]*3;
+                    const value=array[i * step] * ratio;
 
                     ctx.fillStyle=options.capColor;
                     if(value < capPositions[i])
