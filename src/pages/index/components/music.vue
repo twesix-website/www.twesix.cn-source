@@ -20,7 +20,6 @@
             </audio>
 
         </div>
-
         <canvas id="music_canvas"></canvas>
     </div>
 </template>
@@ -74,8 +73,8 @@
                     const canvas = document.getElementById('music_canvas')
                     function resize()
                     {
-                        canvas.width=canvas.parentElement.clientWidth
-                        canvas.height=canvas.parentElement.clientHeight
+                        canvas.width=canvas.clientWidth
+                        canvas.height=canvas.clientHeight
                     }
                     resize()
 
@@ -123,6 +122,7 @@
     {
         margin-top: 1rem;
         width: 100%;
+        max-width: 1000px;
     }
     #music
     {
@@ -131,37 +131,23 @@
         position: absolute;
         left: 0;
         top: 0;
-        z-index: 2
+        z-index: 2;
+
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
     }
     #panel
     {
-        position: relative;
-        z-index: 3;
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        padding: 1rem;
-    }
-    #music_info
-    {
-        /*width: 100%;*/
+        height: 12rem;
         text-align: center;
-    }
-    #music_controls
-    {
-        margin: 1rem 0;
-        /*width: 100%;*/
-        /*text-align: center;*/
     }
     #music_canvas
     {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
+        flex-grow: 1;
+    }
+    #music_controls
+    {
+        margin: 2rem 0;
     }
 </style>

@@ -62,9 +62,4 @@ prototype.getByteFrequencyData = function()
     return array
 }
 
-prototype.loadAudioStream = function(url)
-{
-
-}
-
 export default prototype

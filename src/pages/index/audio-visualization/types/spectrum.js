@@ -4,13 +4,13 @@ const defaultOptions =
     {
         meterWidth: 20,
         gapWidth: 2,
-        capHeight: 5,
+        capHeight: 3,
         capFallSpeed: 3,
         capColor: '#ff2f3f',
         gradientLength: 1080,
-        gradientStartColor: '#34a853',
-        gradientMiddleColor: '#4285f4',
-        gradientEndColor: '#fbbc05',
+        gradientStartColor: '#5bbeff',
+        gradientMiddleColor: '#aad8ff',
+        gradientEndColor: '#fb9c7a',
     }
     // TODO: design beautiful gradients
 
@@ -41,7 +41,7 @@ Spectrum.prototype=
             const meter = this.__options.meterWidth
             const gap = this.__options.gapWidth
             let num
-            num = parseInt(width/(meter + gap))
+            num = parseInt(width / (meter + gap))
             if(width % (num * (meter + gap)) < meter)
             {
                 this.__options.meterNum = num
@@ -72,7 +72,6 @@ Spectrum.prototype=
             const capInitialPosition = 0
             const canvas = this.__canvas
             const ctx=this.__ctx;
-            const ratio = 3; // 柱体的高度/音频数据
             const clearCanvas = this.__clearCanvas.bind(this)
             const getByteFrequencyData = this.__getByteFrequencyData.bind(this)
             while(capPositions.length < options.meterNum)
@@ -90,36 +89,29 @@ Spectrum.prototype=
 
                 for(let i = 0; i < options.meterNum; i ++)
                 {
-                    const value=array[i * step] * ratio;
+                    const value = array[i * step] / 256 * canvas.height
 
                     ctx.fillStyle=options.capColor;
                     if(value < capPositions[i])
                     {
-                        ctx.fillRect
-                        (
-                            i * (options.meterWidth+options.gapWidth),
-                            canvas.height - capPositions[i] - options.capHeight,
-                            options.meterWidth,
-                            options.capHeight
-                        )
                         capPositions[i] =
                             capPositions[i]-options.capFallSpeed > capInitialPosition
                                 ?
                                 capPositions[i]-options.capFallSpeed
                                 :
                                 capInitialPosition
+                        const x = i * (options.meterWidth + options.gapWidth)
+                        const y = canvas.height - capPositions[i] - options.capHeight
+                        ctx.fillRect(x, y, options.meterWidth, options.capHeight)
                     }
                     else
                     {
-                        ctx.fillRect
-                        (
-                            i * (options.meterWidth+options.gapWidth),
-                            canvas.height - value - options.capHeight,
-                            options.meterWidth,
-                            options.capHeight
-                        )
+                        const x = i * (options.meterWidth + options.gapWidth)
+                        const y = canvas.height - value - options.capHeight
+                        ctx.fillRect(x, y, options.meterWidth, options.capHeight)
                         capPositions[i] = value;
                     }
+
                     ctx.fillStyle=options.gradient;
                     ctx.fillRect
                     (

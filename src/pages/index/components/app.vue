@@ -17,9 +17,8 @@
 
         </div>
     </div>
-
-    <!-- TODO : add rythm.js effect -->
 </template>
+
 <script>
 
     import background from './background.vue';
