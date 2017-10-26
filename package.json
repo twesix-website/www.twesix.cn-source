@@ -3,9 +3,7 @@
   "private": true,
   "scripts": {
     "server": "webpack-dev-server --config webpack-scripts/development/webpack.server.config.js",
-    "development.entry": "webpack --config webpack-scripts/development/webpack.entry.config.js",
     "development.page": "webpack --config webpack-scripts/development/webpack.page.config.js",
-    "production.entry": "webpack --config webpack-scripts/production/webpack.entry.config.js",
     "production.page": "webpack --config webpack-scripts/production/webpack.page.config.js"
   },
   "dependencies": {

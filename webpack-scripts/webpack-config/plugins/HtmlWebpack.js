@@ -13,7 +13,7 @@ pages.forEach(function(page)
         {
             filename: `${page}.html`,
             template: path.resolve(vars.path.src.pages, `${page}/index.html`),
-            chunks: [page],
+            chunks: ['commons', page],
             hash: true,
             cache: true,
         }

@@ -54,7 +54,6 @@
                     messagePaused: '已暂停',
                     audioName: ' - ',
                     player: null,
-                    visualizer: null
                 };
             },
             computed:
@@ -92,22 +91,27 @@
 
                 this.switchMusic()
 
-                const canvas = document.getElementById('music_canvas')
-                function resize()
+                function visualize()
                 {
-                    canvas.width=canvas.parentElement.clientWidth
-                    canvas.height=canvas.parentElement.clientHeight
-                }
-                resize()
-
-                this.visualizer=new Visualizer.Spectrum(this.player, canvas);
-                this.visualizer.start()
-
-                window.addEventListener('resize', function()
-                {
+                    const canvas = document.getElementById('music_canvas')
+                    function resize()
+                    {
+                        canvas.width=canvas.parentElement.clientWidth
+                        canvas.height=canvas.parentElement.clientHeight
+                    }
                     resize()
-                    self.visualizer.resize()
-                })
+
+                    const visualizer=new Visualizer.Spectrum(self.player, canvas);
+                    visualizer.start()
+
+                    window.addEventListener('resize', function()
+                    {
+                        resize()
+                        visualizer.resize()
+                    })
+                }
+
+                visualize()
             },
             methods:
                 {
