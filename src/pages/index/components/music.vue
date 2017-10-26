@@ -2,23 +2,24 @@
     <div id="music">
         <div id="panel">
             <div id="music_info">
-                <h3 class="blue">{{ message }}</h3>
                 <h3 class="blue">
                     {{ name }}
                 </h3>
             </div>
             <div id="music_controls">
-                <span  class="button-mini white green-bg" @click="toggle">&nbsp;&nbsp;<i class="fa" :class="{'fa-play': ! playing, 'fa-pause': playing}"></i>&nbsp;&nbsp;</span>
                 <span class="button-mini white orange-bg" @click="switchMusic">&nbsp;&nbsp;<i class="fa fa-fast-forward"></i>&nbsp;&nbsp;</span>
                 <span class="button-mini white red-bg" @click="close">&nbsp;&nbsp;<i class="fa fa-times"></i>&nbsp;&nbsp;</span>
             </div>
-        </div>
 
-        <audio id="player"
-               @canplay="canplay"
-               @ended="ended"
-               :src=" baseUrl + audioName + '.mp3' "
-               crossOrigin="anonymous"></audio>
+            <audio id="player"
+                   controls
+                   @canplay="canplay"
+                   @ended="ended"
+                   :src=" baseUrl + audioName + '.mp3' "
+                   crossOrigin="anonymous">
+            </audio>
+
+        </div>
 
         <canvas id="music_canvas"></canvas>
     </div>
@@ -46,12 +47,7 @@
             data: function()
             {
                 return {
-                    playing: false,
                     baseUrl: baseUrl,
-                    loading: true,
-                    messageLoading: '正在加载，请稍候...',
-                    messagePlaying: '正在播放',
-                    messagePaused: '已暂停',
                     audioName: ' - ',
                     player: null,
                 };
@@ -64,24 +60,6 @@
                         parts.shift()
                         return parts.join('-')
                     },
-                    message: function()
-                    {
-                        if(this.loading)
-                        {
-                            return this.messageLoading
-                        }
-                        else
-                        {
-                            if(this.playing)
-                            {
-                                return this.messagePlaying
-                            }
-                            else
-                            {
-                                return this.messagePaused
-                            }
-                        }
-                    }
                 },
             mounted: function()
             {
@@ -117,11 +95,6 @@
                 {
                     switchMusic: function()
                     {
-                        if(this.playing)
-                        {
-                            this.pause()
-                        }
-                        this.loading = true
                         this.audioName = playList.pop()
                         if(playList.length === 0)
                         {
@@ -130,47 +103,15 @@
                     },
                     canplay: function()
                     {
-                        this.loading = false
-                        this.play()
+                        this.player.play()
                     },
                     ended: function()
                     {
-                        this.playing = false
                         this.switchMusic()
-                    },
-                    play: function()
-                    {
-                        this.player.play()
-                        this.playing = true
-                    },
-                    pause: function()
-                    {
-                        this.player.pause();
-                        this.playing = false
-                    },
-                    toggle: function(e)
-                    {
-                        // e.preventBubble();
-                        e.preventDefault();
-                        e.stopPropagation();
-
-                        if(this.loading)
-                        {
-                            return
-                        }
-                        if(this.player.paused)
-                        {
-                            this.play()
-                        }
-                        else
-                        {
-                            this.pause()
-                        }
                     },
                     close: function()
                     {
                         this.$emit('musicOff')
-                        this.visualizer.stop()
                     }
                 }
         }
@@ -180,7 +121,8 @@
 <style scoped>
     audio
     {
-        visibility: hidden;
+        margin-top: 1rem;
+        width: 100%;
     }
     #music
     {
@@ -210,7 +152,7 @@
     }
     #music_controls
     {
-        margin-top: 1rem;
+        margin: 1rem 0;
         /*width: 100%;*/
         /*text-align: center;*/
     }

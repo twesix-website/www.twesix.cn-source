@@ -21,6 +21,7 @@ function debug()
     }
 }
 
+// debug()
 
 import root from './components/app.vue';
 

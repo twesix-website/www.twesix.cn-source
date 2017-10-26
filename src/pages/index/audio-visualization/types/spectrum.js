@@ -37,7 +37,19 @@ Spectrum.prototype=
         __getByteFrequencyData: prototype.getByteFrequencyData,
         __calculateSize: function()
         {
-            this.__options.meterNum = parseInt(this.__canvas.width/(this.__options.meterWidth + this.__options.gapWidth))
+            const width = this.__canvas.width
+            const meter = this.__options.meterWidth
+            const gap = this.__options.gapWidth
+            let num
+            num = parseInt(width/(meter + gap))
+            if(width % (num * (meter + gap)) < meter)
+            {
+                this.__options.meterNum = num
+            }
+            else
+            {
+                this.__options.meterNUm = num + 1
+            }
         },
         resize: function()
         {
