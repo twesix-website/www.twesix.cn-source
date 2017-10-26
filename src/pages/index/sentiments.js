@@ -1,5 +1,25 @@
 const sentiments = [];
 
+// 45
+sentiments.push
+(
+    {
+        "content":"我愿意将格洛米借给你//你其实明白我心意",
+        "meta":"《有何不可》",
+        "time":"2017-10-26 20:25:32"
+    }
+);
+
+// 44
+sentiments.push
+(
+    {
+        "content":"咱辈分比较小昨天刚报名上道//各路英雄好汉没事别和我瞎闹",
+        "meta":"《大笑江湖》",
+        "time":"2017-10-26 20:16:33"
+    }
+);
+
 // 43
 sentiments.push
 (
@@ -164,7 +184,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"追逐梦想//总是百转千回//无怨无悔//从容面对",
+        "content":"追逐梦想 总是百转千回//无怨无悔 从容面对",
         "meta":"田震 《风雨彩虹铿锵玫瑰》",
         "time":"2016-12-27 17:28:31"
     }
@@ -194,7 +214,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"早习惯了孤独相随",
+        "content":"早习惯了//孤独相随",
         "meta":"无心",
         "time":"2016-12-27 17:02:07"
     }
@@ -254,7 +274,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"大丈夫当横行天下",
+        "content":"大丈夫//当横行天下",
         "meta":"无心",
         "time":"2016-12-22 15:56:46"
     }
@@ -344,7 +364,7 @@ sentiments.push
 sentiments.push
 (
     {
-        "content":"冤家宜解不宜结",
+        "content":"冤家宜解//不宜结",
         "meta":"于吉林大学南苑二公寓473",
         "time":"2016-12-6 11:43:46"
     }

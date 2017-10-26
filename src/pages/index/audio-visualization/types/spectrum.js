@@ -13,6 +13,7 @@ const defaultOptions =
         gradientEndColor: '#fb9c7a',
     }
     // TODO: design beautiful gradients
+    // TODO: optimize rendering
 
 const Spectrum=function(audioSource, canvas, options = {})
 {
