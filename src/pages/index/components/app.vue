@@ -2,20 +2,19 @@
     <div id="app">
 
         <background></background>
-        <music v-if="music" @musicOff="musicOff"></music>
+        <!--<music v-if="music" @musicOff="musicOff"></music>-->
 
-        <div id="content">
-            <div id="top">
-                <_title :display="title"></_title>
-                <description @musicOn="musicOn" @musicOff="musicOff"
-                             :display="description">
-                </description>
-            </div>
-            <div id="bottom">
-                <sentiment :display="sentiment"></sentiment>
-            </div>
-
-        </div>
+        <!--<div id="content">-->
+            <!--<div id="top">-->
+                <!--<_title :display="title"></_title>-->
+                <!--<description @musicOn="musicOn" @musicOff="musicOff"-->
+                             <!--:display="description">-->
+                <!--</description>-->
+            <!--</div>-->
+            <!--<div id="bottom">-->
+                <!--<sentiment :display="sentiment"></sentiment>-->
+            <!--</div>-->
+        <!--</div>-->
     </div>
 </template>
 
@@ -129,6 +128,7 @@
     {
         width: 100%;
         height: 100%;
+        background-color: transparent;
     }
 
     #content
