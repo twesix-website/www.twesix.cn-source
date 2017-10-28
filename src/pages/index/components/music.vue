@@ -3,7 +3,7 @@
         <div id="panel">
             <div id="music_info">
                 <h3 class="blue">
-                    {{ name }}
+                    {{ audioName }}
                 </h3>
             </div>
             <div id="music_controls">
@@ -15,7 +15,7 @@
                    controls
                    @canplay="canplay"
                    @ended="ended"
-                   :src=" baseUrl + audioName + '.mp3' "
+                   :src="baseUrl + audioUrl"
                    crossOrigin="anonymous">
             </audio>
 
@@ -26,7 +26,6 @@
 
 <script>
 
-    const baseUrl = 'https://cn-twesix-static.oss-cn-beijing.aliyuncs.com/homepage/audio/'
     import musicList from '../list'
     import { randomize } from '../util'
     import Visualizer from '../audio-visualization/'
@@ -35,6 +34,13 @@
 
     function initPlayList()
     {
+        if(musicList.length === 0)
+        {
+            setTimeout(function()
+            {
+                initPlayList()
+            }, 100)
+        }
         playList = JSON.parse(JSON.stringify(musicList))
         randomize(playList)
         console.log(playList)
@@ -46,20 +52,12 @@
             data: function()
             {
                 return {
-                    baseUrl: baseUrl,
-                    audioName: ' - ',
+                    baseUrl: 'https://wvw.twesix.cn/proxy/?url=',
+                    audioUrl: null,
+                    audioName: ' 加载中 ',
                     player: null,
                 };
             },
-            computed:
-                {
-                    name: function()
-                    {
-                        const parts = this.audioName.split('-')
-                        parts.shift()
-                        return parts.join('-')
-                    },
-                },
             mounted: function()
             {
                 const self = this
@@ -94,7 +92,9 @@
                 {
                     switchMusic: function()
                     {
-                        this.audioName = playList.pop()
+                        const music = playList.pop()
+                        this.audioName = music.name
+                        this.audioUrl = music.url
                         if(playList.length === 0)
                         {
                             initPlayList()
