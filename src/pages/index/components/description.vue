@@ -13,7 +13,7 @@
             <a href="#">
                 <div class="button item red-bg white" @click="music">音乐</div>
             </a>
-            <a href="https://www.twesix.cn/blog" target="_blank">
+            <a href="http://www.jianshu.com/u/a662a629db7d" target="_blank">
                 <div class="button item orange-bg white">远方</div>
             </a>
         </div>

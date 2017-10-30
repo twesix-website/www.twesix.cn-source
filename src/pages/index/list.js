@@ -10,6 +10,8 @@ const musicList=[];
 // musicList.push('许嵩 - 你若成风')
 // musicList.push('许嵩 - 有何不可')
 
+// TODO: fix the bug that only the first song can be fetched
+
 export default musicList
 
 const baseUrl = 'https://wvw.twesix.cn/music'
