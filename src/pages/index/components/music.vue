@@ -15,7 +15,7 @@
                    controls
                    @canplay="canplay"
                    @ended="ended"
-                   :src="baseUrl + audioUrl"
+                   :src=" audioUrl ? baseUrl + audioUrl : null "
                    crossOrigin="anonymous">
             </audio>
 
@@ -27,7 +27,7 @@
 <script>
 
     import musicList from '../list'
-    import { randomize } from '../util'
+    import { getMusicUrl } from '../list'
     import Visualizer from '../audio-visualization/'
 
     let playList
@@ -42,8 +42,6 @@
             }, 100)
         }
         playList = JSON.parse(JSON.stringify(musicList))
-        randomize(playList)
-        console.log(playList)
     }
     initPlayList()
 
@@ -90,10 +88,33 @@
             },
             methods:
                 {
-                    switchMusic: function()
+                    switchMusic: async function()
                     {
                         const music = playList.pop()
+                        if( ! music )
+                        {
+                            setTimeout(() =>
+                            {
+                                console.log(`music list loading, wait for 100ms to switch music`)
+                                this.switchMusic()
+                            }, 100)
+                            return
+                        }
                         this.audioName = music.name
+                        if( ! music.url)
+                        {
+                            const url = await getMusicUrl(music.id)
+                            console.log(url)
+                            music.url = url
+                            musicList.forEach(function(_music, index)
+                            {
+                                if(_music.id === music.id)
+                                {
+                                    musicList[index].url = url
+                                }
+                            })
+                        }
+                        console.log(music)
                         this.audioUrl = music.url
                         if(playList.length === 0)
                         {

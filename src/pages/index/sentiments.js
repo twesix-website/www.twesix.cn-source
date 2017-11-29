@@ -4,6 +4,16 @@ const sentiments = [];
 sentiments.push
 (
     {
+        "content":"易公子 你对我有情//我一定不会辜负你",
+        "meta":"素素",
+        "time":"2017-11-9 20:35:54"
+    }
+);
+
+// 47
+sentiments.push
+(
+    {
         "content":"你美目如当年//流转我心间",
         "meta":"《如果当时》",
         "time":"2017-11-2 08:21:25"
