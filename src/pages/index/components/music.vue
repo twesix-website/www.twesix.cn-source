@@ -91,7 +91,7 @@
                     switchMusic: async function()
                     {
                         this.player.pause()
-                        const music = playList.pop()
+                        const music = playList.shift()
                         if( ! music )
                         {
                             setTimeout(() =>
