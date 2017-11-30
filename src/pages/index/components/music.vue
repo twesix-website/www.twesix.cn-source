@@ -90,6 +90,7 @@
                 {
                     switchMusic: async function()
                     {
+                        this.player.pause()
                         const music = playList.pop()
                         if( ! music )
                         {
@@ -114,7 +115,6 @@
                                 }
                             })
                         }
-                        console.log(music)
                         this.audioUrl = music.url
                         if(playList.length === 0)
                         {
