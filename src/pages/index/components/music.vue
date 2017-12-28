@@ -50,7 +50,7 @@
             data: function()
             {
                 return {
-                    baseUrl: 'https://wvw.twesix.cn/proxy/?url=',
+                    baseUrl: 'https://api.twesix.cn/proxy/?url=',
                     audioUrl: null,
                     audioName: ' 加载中 ',
                     player: null,

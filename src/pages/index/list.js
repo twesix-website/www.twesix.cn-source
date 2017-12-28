@@ -1,7 +1,7 @@
 const musicList=[];
 export default musicList
 
-const baseUrl = 'https://wvw.twesix.cn/music'
+const baseUrl = 'https://api.twesix.cn/music'
 const playListId = 971042549
 
 const getPlayList = async function(id)
