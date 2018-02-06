@@ -1,21 +1,25 @@
 <template>
     <div id="music">
+        <br>
+        <br>
+        <br>
         <div id="panel">
             <div id="music_info">
-                <h3 class="blue">
+                <h1 class="subtitle">
                     {{ audioName }}
-                </h3>
+                </h1>
             </div>
             <div id="music_controls">
-                <span class="button-mini white orange-bg" @click="switchMusic">&nbsp;&nbsp;<i class="fa fa-fast-forward"></i>&nbsp;&nbsp;</span>
-                <span class="button-mini white red-bg" @click="close">&nbsp;&nbsp;<i class="fa fa-times"></i>&nbsp;&nbsp;</span>
+                <button class="button is-success" @click="switchMusic">&nbsp;&nbsp;<i class="fa fa-fast-forward"></i>&nbsp;&nbsp;</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="button is-danger" @click="musicOff">&nbsp;&nbsp;<i class="fa fa-times"></i>&nbsp;&nbsp;</button>
             </div>
 
             <audio id="player"
                    controls
                    @canplay="canplay"
                    @ended="ended"
-                   :src=" audioUrl ? baseUrl + audioUrl : null "
+                   :src="musicUrl"
                    crossOrigin="anonymous">
             </audio>
 
@@ -26,36 +30,35 @@
 
 <script>
 
-    import musicList from '../list'
-    import { getMusicUrl } from '../list'
     import Visualizer from '../audio-visualization/'
 
-    let playList
+    let playlist = []
+    const baseUrl = 'https://api.twesix.cn/music'
+    const playListId = 971042549
 
-    function initPlayList()
+    ;(async function()
     {
-        if(musicList.length === 0)
-        {
-            setTimeout(function()
-            {
-                initPlayList()
-            }, 100)
-        }
-        playList = JSON.parse(JSON.stringify(musicList))
-    }
-    initPlayList()
+        const result = await $.getJSON(`${baseUrl}/playlist/detail?id=${playListId}`)
+        playlist = JSON.parse(JSON.stringify(result.result.tracks))
+    })()
 
     export default
         {
             data: function()
             {
                 return {
-                    baseUrl: 'https://api.twesix.cn/proxy/?url=',
-                    audioUrl: null,
                     audioName: ' 加载中 ',
                     player: null,
+                    musicId: 31473269
                 };
             },
+            computed:
+                {
+                    musicUrl: function()
+                    {
+                        return `https://api.twesix.cn/proxy/?url=http://music.163.com/song/media/outer/url?id=${this.musicId}.mp3`
+                    }
+                },
             mounted: function()
             {
                 const self = this
@@ -88,10 +91,10 @@
             },
             methods:
                 {
-                    switchMusic: async function()
+                    switchMusic: function()
                     {
                         this.player.pause()
-                        const music = playList.shift()
+                        const music = playlist.shift()
                         if( ! music )
                         {
                             setTimeout(() =>
@@ -101,25 +104,9 @@
                             }, 100)
                             return
                         }
+                        playlist.push(music)
                         this.audioName = music.name
-                        if( ! music.url)
-                        {
-                            const url = await getMusicUrl(music.id)
-                            console.log(url)
-                            music.url = url
-                            musicList.forEach(function(_music, index)
-                            {
-                                if(_music.id === music.id)
-                                {
-                                    musicList[index].url = url
-                                }
-                            })
-                        }
-                        this.audioUrl = music.url
-                        if(playList.length === 0)
-                        {
-                            initPlayList()
-                        }
+                        this.audioUrl = music.id
                     },
                     canplay: function()
                     {
@@ -129,7 +116,7 @@
                     {
                         this.switchMusic()
                     },
-                    close: function()
+                    musicOff: function()
                     {
                         this.$emit('musicOff')
                     }
@@ -139,7 +126,7 @@
 </script>
 
 <style scoped>
-    audio
+    #player
     {
         margin-top: 1rem;
         width: 100%;
@@ -156,7 +143,7 @@
 
         display: flex;
         flex-direction: column;
-        overflow: scroll;
+        overflow: hidden;
     }
     #panel
     {

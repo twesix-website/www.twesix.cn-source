@@ -1,21 +1,13 @@
 <template>
-    <transition
-            @before-enter="beforeEnter"
-            @enter-cancelled="enterCancelled"
-            @after-leave="afterLeave"
-            @leave-cancelled="leaveCancelled"
-            appear
-            appearToClass="animated fadeInUpBig"
-            enterToClass="animated fadeInUpBig"
-            leaveToClass="animated fadeOutDownBig">
-        <div v-show="display" id="sentiment"  class="hidden" :class="{ visible: visible }">
-            <p class="segment" v-for=" segment in sentiment.content ">
+    <div>
+        <div id="sentiment">
+            <p class="segment has-text-centered" v-for=" segment in sentiment.content ">
                 {{ segment }}
             </p>
-            <p class="meta">--- {{ sentiment.meta }}</p>
-            <p class="time">{{ sentiment.time }}</p>
+            <!--<p class="meta">-&#45;&#45; {{ sentiment.meta }}</p>-->
+            <!--<p class="time">{{ sentiment.time }}</p>-->
         </div>
-    </transition>
+    </div>
 </template>
 <script>
 
@@ -32,91 +24,19 @@
                     visible: false
                 };
             },
-            props: ['display'],
-            methods:
-                {
-                    randomSentiment: function()
-                    {
-                        this.index = random(0, sentiments.length - 1)
-                        this.sentiment = sentiments[this.index]
-                    },
-                    beforeEnter: function()
-                    {
-                        this.randomSentiment()
-
-                        const self = this
-
-                        self.visible = false
-                        setTimeout(function()
-                        {
-                            self.visible = true
-                        }, 30)
-                    },
-                    enterCancelled: function()
-                    {
-
-                    },
-                    afterLeave: function()
-                    {
-                        this.visible = false
-                    },
-                    leaveCancelled: function()
-                    {
-
-                    }
-                }
+            mounted: function()
+            {
+                this.index = random(0, sentiments.length - 1)
+                this.sentiment = sentiments[this.index]
+                console.log(this.sentiment)
+            }
         }
 
 </script>
 
 <style scoped>
-
-    .visible
-    {
-        visibility: visible !important;
-    }
-
-    .hidden
-    {
-        visibility: hidden;
-    }
-
-    #sentiment
-    {
-        /*animation-duration: .5s;*/
-
-        font-size: 0.8rem;
-        min-width: 600px;
-        background-color: #2850a7;
-        padding: 30px;
-        color: #bdcae4;
-        border-radius: 3em;
-    }
     .segment
     {
-        text-align: center;
+        color: darkgray;
     }
-    .meta
-    {
-        text-align: right;
-    }
-    .time
-    {
-        text-align: right;
-    }
-
-    @media (min-width: 601px)
-    {
-
-    }
-
-    @media (max-width: 600px)
-    {
-        .meta,
-        .time
-        {
-            display:none;
-        }
-    }
-
 </style>
