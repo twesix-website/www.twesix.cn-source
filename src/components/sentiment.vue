@@ -28,7 +28,7 @@
             {
                 this.index = random(0, sentiments.length - 1)
                 this.sentiment = sentiments[this.index]
-                console.log(this.sentiment)
+                console.log(JSON.stringify(this.sentiment))
             }
         }
 
@@ -37,6 +37,6 @@
 <style scoped>
     .segment
     {
-        color: darkgray;
+        color: #cccccc;
     }
 </style>

@@ -1,11 +1,9 @@
 <template>
     <div id="music">
-        <br>
-        <br>
-        <br>
         <div id="panel">
+            <div class="background"></div>
             <div id="music_info">
-                <h1 class="subtitle">
+                <h1 class="title" id="music_name">
                     {{ audioName }}
                 </h1>
             </div>
@@ -14,15 +12,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button class="button is-danger" @click="musicOff">&nbsp;&nbsp;<i class="fa fa-times"></i>&nbsp;&nbsp;</button>
             </div>
-
-            <audio id="player"
-                   controls
-                   @canplay="canplay"
-                   @ended="ended"
-                   :src="musicUrl"
-                   crossOrigin="anonymous">
-            </audio>
-
+            <audio id="player" controls @canplay="canplay" @ended="ended" :src="musicUrl" crossOrigin="anonymous"></audio>
         </div>
         <canvas id="music_canvas"></canvas>
     </div>
@@ -106,7 +96,7 @@
                         }
                         playlist.push(music)
                         this.audioName = music.name
-                        this.audioUrl = music.id
+                        this.musicId = music.id
                     },
                     canplay: function()
                     {
@@ -147,8 +137,29 @@
     }
     #panel
     {
-        height: 12rem;
+        height: auto;
         text-align: center;
+        position: relative;
+        box-sizing: border-box;
+    }
+    .background
+    {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: gray;
+        opacity: .5;
+        z-index: -1;
+    }
+    #music_info
+    {
+        padding-top: 30px;
+    }
+    #music_name
+    {
+        color: white;
     }
     #music_canvas
     {
