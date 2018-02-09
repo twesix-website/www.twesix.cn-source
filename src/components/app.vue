@@ -105,6 +105,11 @@
 </style>
 
 <style scoped>
+    #app
+    {
+        background: no-repeat fixed;
+        background-size: cover;
+    }
     .link
     {
         font-size: 1.5rem;
@@ -123,6 +128,12 @@
         height: 100%;
         background-color: gray;
         opacity: .5;
+    }
+    #content
+    {
+        overflow-y: scroll;
+        width: 100%;
+        height: 100%;
     }
     .content-inner
     {

@@ -4,8 +4,11 @@
             <p class="segment has-text-centered" v-for=" segment in sentiment.content ">
                 {{ segment }}
             </p>
-            <!--<p class="meta">-&#45;&#45; {{ sentiment.meta }}</p>-->
-            <!--<p class="time">{{ sentiment.time }}</p>-->
+            <br>
+            <br>
+            <br>
+            <p class="meta">{{ sentiment.meta }}</p>
+            <p class="time">{{ sentiment.time }}</p>
         </div>
     </div>
 </template>
@@ -35,8 +38,13 @@
 </script>
 
 <style scoped>
-    .segment
+    #sentiment
     {
         color: #cccccc;
+    }
+    .meta,
+    .time
+    {
+        text-align: right;
     }
 </style>
