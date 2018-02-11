@@ -57,10 +57,12 @@
         },
         beforeMount: function()
         {
-            let day = new Date().getDay()
+            let day = new Date().getDate()
             if(day < 10)
             {
+                console.log(day)
                 day = '0' + day
+                console.log(day)
             }
             this.day = day
         },
