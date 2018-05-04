@@ -23,7 +23,7 @@
     import Visualizer from '../audio-visualization/'
 
     let playlist = []
-    const baseUrl = 'https://api.twesix.cn/music'
+    const baseUrl = 'http://api.twesix.cn/music'
     const playListId = 971042549
 
     ;(async function()
@@ -46,7 +46,7 @@
                 {
                     musicUrl: function()
                     {
-                        return `https://api.twesix.cn/proxy/?url=http://music.163.com/song/media/outer/url?id=${this.musicId}.mp3`
+                        return `http://api.twesix.cn/proxy/?url=http://music.163.com/song/media/outer/url?id=${this.musicId}.mp3`
                     }
                 },
             mounted: function()
