@@ -3,12 +3,6 @@
 
         <music @musicOff="musicOff" v-if="music" />
         <div id="content" v-if="!music">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
             <div class="content-wrapper">
                 <div class="background"></div>
                 <div class="content-inner">
@@ -16,26 +10,21 @@
                     <br>
                     <br>
                     <div class="columns" id="nav">
-                        <a href="https://github.com/twesix" class="is-3 column has-text-centered link" target="_blank">
+                        <div class="is-3 column"></div>
+                        <a href="https://github.com/twesix" class="is-2 column has-text-centered link" target="_blank">
                             代码
                         </a>
-                        <a @click.prevent="musicOn" href="#" class="is-3 column has-text-centered link">
+                        <a @click.prevent="musicOn" href="#" class="is-2 column has-text-centered link">
                             音乐
                         </a>
-                        <a href="https://www.jianshu.com/u/a662a629db7d" class="is-3 column has-text-centered link" target="_blank">
+                        <a href="https://www.jianshu.com/u/a662a629db7d" class="is-2 column has-text-centered link" target="_blank">
                             远方
                         </a>
-                        <a href="http://www.twesix.cn/love/" class="is-3 column has-text-centered link" target="_blank">
-                            所爱
-                        </a>
+                        <div class="is-3 column"></div>
                     </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <sentiment id="sentiment" />
+                    <!--<div class="has-text-centered">-->
+                        <!--<sentiment />-->
+                    <!--</div>-->
                 </div>
             </div>
         </div>

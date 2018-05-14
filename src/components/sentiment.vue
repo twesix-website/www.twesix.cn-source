@@ -1,15 +1,13 @@
 <template>
-    <div>
-        <div id="sentiment">
-            <p class="segment has-text-centered" v-for=" segment in sentiment.content ">
-                {{ segment }}
-            </p>
-            <br>
-            <br>
-            <br>
-            <p class="meta">{{ sentiment.meta }}</p>
-            <p class="time">{{ sentiment.time }}</p>
-        </div>
+    <div id="sentiment">
+        <p class="segment has-text-centered" v-for=" segment in sentiment.content ">
+            {{ segment }}
+        </p>
+        <br>
+        <br>
+        <br>
+        <p class="meta">{{ sentiment.meta }}</p>
+        <p class="time">{{ sentiment.time }}</p>
     </div>
 </template>
 <script>
@@ -41,6 +39,8 @@
     #sentiment
     {
         color: #cccccc;
+        display: inline;
+        max-width: 400px;
     }
     .meta,
     .time
