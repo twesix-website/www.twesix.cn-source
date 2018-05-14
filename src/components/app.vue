@@ -25,7 +25,7 @@
                         <a href="https://www.jianshu.com/u/a662a629db7d" class="is-3 column has-text-centered link" target="_blank">
                             远方
                         </a>
-                        <a href="http://www.twesix.cn/secret/" class="is-3 column has-text-centered link" target="_blank">
+                        <a href="http://www.twesix.cn/love/" class="is-3 column has-text-centered link" target="_blank">
                             所爱
                         </a>
                     </div>
