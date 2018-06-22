@@ -7,6 +7,7 @@ script:
   - cat .travis.yml
   - ls
   - npm run build
+  - cp CNAME ./build
   - cd ./build
   - git init
   - git add --all .
