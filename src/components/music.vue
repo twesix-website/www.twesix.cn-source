@@ -12,7 +12,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button class="button is-danger" @click="musicOff">&nbsp;&nbsp;<i class="fa fa-times"></i>&nbsp;&nbsp;</button>
             </div>
-            <audio id="player" controls @canplay="canplay" @ended="ended" :src="musicUrl" crossOrigin="anonymous"></audio>
+            <audio @error="error" id="player" controls @canplay="canplay" @ended="ended" :src="musicUrl" crossOrigin="anonymous"></audio>
         </div>
         <canvas id="music_canvas"></canvas>
     </div>
@@ -34,6 +34,7 @@
 
     export default
         {
+            name: 'music',
             data: function()
             {
                 return {
@@ -109,6 +110,11 @@
                     musicOff: function()
                     {
                         this.$emit('musicOff')
+                    },
+                    error: function(e)
+                    {
+                        console.log(e)
+                        this.switchMusic()
                     }
                 }
         }

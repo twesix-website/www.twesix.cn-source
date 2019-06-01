@@ -1,4 +1,4 @@
-import root from './components/app.vue';
+import root from './components/root.vue';
 
 const app = new Vue
 (

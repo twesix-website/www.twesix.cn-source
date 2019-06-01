@@ -483,7 +483,7 @@ sentiments.push
 
 sentiments.forEach(function(e,i,arr)
 {
-    arr[i].content=arr[i].content.split('//');
+    arr[i].content=arr[i].my.split('//');
 });
 
 export default sentiments;

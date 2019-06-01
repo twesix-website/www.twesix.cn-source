@@ -2,13 +2,13 @@
   "name": "twesix-homepage",
   "private": true,
   "scripts": {
-    "dev":"cd src && parcel index.html",
-    "build":"cd src && parcel build index.html --public-url ./ --out-dir ../build --no-cache --no-minify "
+    "build": "cd src && parcel build index.html --public-url ./ --out-dir ../build --no-cache --no-minify "
   },
   "dependencies": {
-    "babel-preset-env": "^1.6.1",
-    "parcel-bundler": "^1.5.1",
-    "parcel-plugin-vue": "^1.5.0",
-    "vue": "^2.5.13"
+    "@vue/component-compiler-utils": "^3.0.0",
+    "parcel-bundler": "^1.12.3",
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3",
+    "vue-template-compiler": "^2.6.10"
   }
 }
